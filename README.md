@@ -56,7 +56,7 @@ Folder with example [Images](./Images/Z-Image-Turbo/).
 ![Wan 2.2 Collage](./Images/Wan22.png)
 
 <div align="center">
-![Wan 2.2 Video](./Images/WAN/Wan22_00454.mp4)
+  <video src="./Images/WAN/Wan22_00454.mp4" width="70%" poster=""> </video>
 </div>
 
 Honestly, this model is extremely impressive. I'm surprised by its flexibility and realism, considering it's primarily a video model. That, and the vast collection of LoRAs available for it, makes it a very competent model for both image and video.
