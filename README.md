@@ -38,4 +38,16 @@ To use this Workflows, install the following Custom_Nodes in your ComfyUI (you p
 - [Z-Image Power Nodes](https://github.com/martin-rizzo/ComfyUI-ZImagePowerNodes).
 
 ## The Workflows
-They are located under the folder [Workflows](./Workflows/).
+
+#### [Z-Image-Turbo](https://github.com/Tongyi-MAI/Z-Image)
+![Z-Image-Turbo Collage](./Images/Z-Image-Turbo.png)
+
+One of my favorites so far. Realistic, versatile and fast. It's recommended to use the Z-Image for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent.
+
+I've created this Workflows so far:
+- TXT2IMG: A simple text to image using a custom_node for styles presets.
+- IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
+- SeedVR2 Upscaler: First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+
+Folder to the Workflows [Z-Image-Turbo](./Workflows/Z-Image/).
+Folder with example [Images](./Images/Z-Image-Turbo/).
