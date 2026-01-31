@@ -56,7 +56,11 @@ Folder with example [Images](./Images/Z-IMAGE/).
 ![Wan 2.2 Collage](./Images/Wan22.png)
 
 <details class="details-reset border rounded-2" align="center">
+  <summary>🎬 Example Video</summary>
+  
+  <div align="center">
   <video src="https://github.com/user-attachments/assets/a0dbcc65-0d17-4919-87fd-a60485ef7bca" width="70%" poster=""> </video>
+  </div>
 </details>
 
 Honestly, this model is extremely impressive. I'm surprised by its flexibility and realism, considering it's primarily a video model. That, and the vast collection of LoRAs available for it, makes it a very competent model for both image and video.
