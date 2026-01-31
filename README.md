@@ -10,11 +10,11 @@ This is simply a repository I decided to create to keep a copy of my ComfyUI Wor
 
 Feel free to use them and make your own customizations. Note that I am using GGUF models on my computer; change its nodes if you are using native models.
 
-If you find something that could be improved and you'd like to share it with me, let me know here or through my Reddit username VictorDmAlves.
+If you find something that could be improved and you'd like to share it with me, let me know here or through my Reddit by the username VictorDmAlves.
 
 If you like to keep track of any changes that I make to the Workflows, be sure to Watch this repository on GitHub.
 
-## First of all
+## Dependencies
 I highly recommend using Straight lines in the "Lite Graph" settings, under the "Graph" section. Either this, or keep the lines invisible. My Workflows were built with this in mind.
 
 To use this Workflows, install the following Custom_Nodes in your ComfyUI (you probably already have most of them):
@@ -45,9 +45,27 @@ To use this Workflows, install the following Custom_Nodes in your ComfyUI (you p
 One of my favorites so far. Realistic, versatile and fast. It's recommended to use the Z-Image for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent.
 
 I've created this Workflows so far:
-- TXT2IMG: A simple text to image using a custom_node for styles presets.
+- TXT2IMG: A simple text to image using a custom_node with styles presets.
 - IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
 - SeedVR2 Upscaler: First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 
-Folder to the Workflows [Z-Image-Turbo](./Workflows/Z-Image/).
+Folder to the Workflows [Z-Image-Turbo](./Workflows/Z-IMAGE/).
 Folder with example [Images](./Images/Z-Image-Turbo/).
+
+#### [Wan 2.2](https://github.com/Wan-Video/Wan2.2)
+![Wan 2.2 Collage](./Images/Wan22.png)
+
+<div align="center">
+![Wan 2.2 Video](./Images/WAN/Wan22_00454.mp4)
+</div>
+
+Honestly, this model is extremely impressive. I'm surprised by its flexibility and realism, considering it's primarily a video model. That, and the vast collection of LoRAs available for it, makes it a very competent model for both image and video.
+
+I've created this Workflows so far:
+- TXT2IMG: A simple text to image using WanVideoNAG for better control.
+- IMG2IMG: A image to image, but with no ControlNet of any kind yet (Wan has VACE; a different beast itself, I'm still learning).
+- TXT & IMG2VID: With the help of the 5B model, that can creat text or image to video, this Workflow allow you to generate a video with good length and quality. I've add the possibility to "stitch" two videos at one, making it seem like it's a continuous video; for that, see the Note within this Workflow for more information.
+- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+
+Folder to the Workflows [Wan 2.2](./Workflows/WAN/).
+Folder with example [Images and Video](./Images/WAN/).
