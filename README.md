@@ -37,6 +37,11 @@ To use this Workflows, install the following Custom_Nodes in your ComfyUI (you p
 - [WAS Node Suite (Revised)](https://github.com/ltdrdata/was-node-suite-comfyui).
 - [Z-Image Power Nodes](https://github.com/martin-rizzo/ComfyUI-ZImagePowerNodes).
 
+## Tips and Tricks
+In all my Workflows, you will see that is included a SeedVR2 Workflow for all models. In addition to the features it provides, it can be used to transform an image into another image using a different model thanks to the second KSampler. For instance, you can take an image created in Z-Image-Turbo and place it directly into Flux's SeedVR2. Not only will it transform the image into a Flux image, but it will also allow you to maintain the similarity between the models as much as possible.
+
+I played around with this quite a bit, to the point that it's something interesting to mess around; try for yourself and see the results.
+
 ## The Workflows
 
 #### Z-Image-Turbo
