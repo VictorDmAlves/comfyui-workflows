@@ -138,7 +138,7 @@ Folder with example [Images](./Images/FLUX/).
 #### Captions
 ![Captions Collage](./Images/Captions.png)
 
-For all LoRA training, I always used captions. Furthermore, it's possible to use them to extract information from images and use them to generate images.
+For all my LoRA training, I always used captions. Furthermore, one of its uses is to analyze any image and generate a prompt to be used in image generation.
 
 Both Workflows are very similar; both have a way to caption one image or a batch of images, saving in a folder afterwards.
 
