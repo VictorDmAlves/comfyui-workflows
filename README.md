@@ -38,9 +38,10 @@ To use this Workflows, install the following Custom_Nodes in your ComfyUI (you p
 - [Z-Image Power Nodes](https://github.com/martin-rizzo/ComfyUI-ZImagePowerNodes).
 
 ## Tips and Tricks
-In all my Workflows, you will see that is included a SeedVR2 Workflow for all models. In addition to the features it provides, it can be used to transform an image into another image using a different model thanks to the second KSampler. For instance, you can take an image created in Z-Image-Turbo and place it directly into Flux's SeedVR2. Not only will it transform the image into a Flux image, but it will also allow you to maintain the similarity between the models as much as possible.
+- In all my Workflows, you will see that is included a SeedVR2 Workflow for all models. In addition to the features it provides, it can be used to transform an image into another image using a different model thanks to the second KSampler. For instance, you can take an image created in Z-Image-Turbo and place it directly into Flux's SeedVR2. Not only will it transform the image into a Flux image, but it will also allow you to maintain the similarity between the models as much as possible.
+- For Flux2 Klein, let's say that you want to swap characters between X (real life photo) with Y (art style photo). It's better to replace the background of X to a white color, then change his style to be exactly the same art style of Y to finaly ask Klein to, with this two changes done, swap X with Y, keeping the same pose if you like. Thanks to [arthan1011](https://www.reddit.com/r/comfyui/comments/1qs2h6p/replace_this_character_workflow_with_flux2_klein/) for this find.
 
-I played around with this quite a bit, to the point that it's something interesting to mess around; try for yourself and see the results.
+Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 
 ## The Workflows
 
@@ -106,7 +107,7 @@ I've created this Workflows so far:
 Folder to the Workflows [Qwen](./Workflows/QWEN/).
 Folder with example [Images](./Images/QWEN/).
 
-#### Flux 2 Klein
+#### Flux2 Klein
 ![Flux 2 Klein Collage](./Images/Flux2.png)
 
 This is the model that has impressed me the most so far. Extremely easy to use, it has spectacular quality and excellent speed. This model can make context-sensitive adjustments, very similar to Gemini and ChatGPT, which represents a major advance in the generation of images locally. Unfortunately, on my current machine, I can't use Flux2, only Klein. Maybe one day I'll upgrade and create Workflows for it; but in the current market situation, it will take a while.
@@ -115,8 +116,7 @@ In any of this Workflows, you can use either the 4B model or the 9B model; just 
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image, using the correct nodes for Flux2.
-- Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base.
-- Prompt Batcher: This Workflow is excellent if you want to change an image multiple times, using different types of prompts, without needing to make one by one.
+- Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base. I've added a Simple Prompt Batcher so you can change an image multiple times, using different types of prompts, without needing to make one by one.
 - SeedVR2 Upscaler: Just like before, but with a twist. First it runs through a second KSampler following your instructions (for reference I left one in the Workflow). After that, by enabling the group "SeedVR2", you can upscale the image.
 
 Folder to the Workflows [Flux2](./Workflows/FLUX-2/).
