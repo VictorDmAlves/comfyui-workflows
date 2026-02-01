@@ -6,7 +6,7 @@
 ![ComfyUI Screenshot](./Images/Main.png)
 </div>
 
-This is simply a repository I decided to create to keep a copy of my ComfyUI Workflows, which I've been using for over two years. Furthermore, since I've learned so much from the community on Discord and Reddit, I'm happy to share it with everyone.
+This is simply a repository I decided to create to keep a copy of my ComfyUI Workflows, which I've been using for years. Furthermore, since I've learned so much from the community on Discord and Reddit, I'm happy to share it with everyone.
 
 Feel free to use them and make your own customizations. Note that I am using GGUF models on my computer; change its nodes if you are using native models.
 
@@ -17,7 +17,7 @@ If you like to keep track of any changes that I make to the Workflows, be sure t
 ## Dependencies
 I highly recommend using Straight lines in the "Lite Graph" settings, under the "Graph" section. Either this, or keep the lines invisible. My Workflows were built with this in mind.
 
-To use this Workflows, install the following Custom_Nodes in your ComfyUI (you probably already have most of them):
+To use this Workflows, install the following custom_nodes in your ComfyUI (you probably already have some of them):
 - [ComfyUI Manager](https://github.com/Comfy-Org/ComfyUI-Manager).
 - [Comfy-KepListStuff](https://github.com/M1kep/Comfy_KepListStuff).
 - [ComfyUI's ControlNet Auxiliary Preprocessors](https://github.com/Fannovel16/comfyui_controlnet_aux).
@@ -88,7 +88,7 @@ One of the best models for producing illustrative and even realistic content. Wi
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image.
 - IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
-- Inpaint: A Workflow that allows you to use Florence2 to mark the area that you want to be inpainted, or select a image and paint a mask yourself. Don't forget to use Checkpoints created specifically for inpaint.
+- Inpaint: A Workflow that allows you to use Florence2 to mark the area that you want to be inpainted, or paint a mark manually using the MaskEditor. Don't forget to use Checkpoints created specifically for inpaint.
 - SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 
 Folder to the Workflows [SD-SDXL](./Workflows/SD-SDXL/).
@@ -145,11 +145,11 @@ Folder with example [Images](./Images/FLUX/).
 
 For all my LoRA training, I always used captions. Furthermore, one of its uses is to analyze any image and generate a prompt to be used in image generation.
 
-Both Workflows are very similar; both have a way to caption one image or a batch of images, saving in a folder afterwards.
+Both Workflows are very similar; both have a way to caption one image or a batch of images, saving them in a folder afterwards.
 
 I've created this Workflows so far:
-- Florence2: The most fast and consistent model to use. Sometimes it can be a little shallow in details, but nothing to bad.
-- QwenVL: The most detailed model for captions, but it can hallucinate a lot and be very inconsistent. But you can give instructions on how to caption the images, just like ChatGPT; I've left a prompt in this Workflow for those who want to caption and train a LoRA.
+- Florence2: The most fast and consistent model to use. Sometimes it can be a little shallow in details, but it still the best in my opinion.
+- QwenVL: The most complete model for captions, but it can hallucinate a lot and be very inconsistent. One of the best things about it is that you can give instructions on how to caption an image, just like ChatGPT; I left a instruction as example within this Workflow.
 
 Folder to the Workflows [Captions](./Workflows/CAPTIONS/).
 Folder with example [Images and Captions](./Images/CAPTIONS/).
