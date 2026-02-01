@@ -140,6 +140,22 @@ I've created this Workflows so far:
 Folder to the Workflows [Flux](./Workflows/FLUX/).
 Folder with example [Images](./Images/FLUX/).
 
+#### Anima
+![Anima Collage](./Images/Anima.png)
+
+This is an experimental model that the folks at CircleStone Labs are developing in collaboration with Comfy Org. It's still in the training phase; there isn't even a Checkpoint yet.
+
+I see a lot of potential for the model, especially when it comes to realism and fixation for generating anime-style images. As you can see, I didn't build a IMG2IMG Workflow since it's not following well the reference images; maybe in the future.
+
+I recommend checking out their [page](https://huggingface.co/circlestone-labs/Anima) for more information about prompts and tags.
+
+I've created this Workflows so far:
+- TXT2IMG: A simple text to image.
+- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+
+Folder to the Workflows [Anima](./Workflows/ANIMA/).
+Folder with example [Images](./Images/FLUX/).
+
 #### Captions
 ![Captions Collage](./Images/Captions.png)
 
