@@ -154,7 +154,7 @@ I've created this Workflows so far:
 - SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 
 Folder to the Workflows [Anima](./Workflows/ANIMA/).
-Folder with example [Images](./Images/FLUX/).
+Folder with example [Images](./Images/ANIMA/).
 
 #### Captions
 ![Captions Collage](./Images/Captions.png)
