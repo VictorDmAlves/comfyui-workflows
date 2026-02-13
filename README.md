@@ -94,10 +94,21 @@ I've created this Workflows so far:
 Folder to the Workflows [SD-SDXL](./Workflows/SD-SDXL/).
 Folder with example [Images](./Images/SD-SDXL/).
 
-#### Qwen
-![Qwen Collage](./Images/Qwen.png)
+#### Qwen2511 Image Edit
+![Qwen2511 Collage](./Images/Qwen2511.png)
 
-Specifically speaking about the Qwen 2512, it's an extremely versatile model with excellent performance and prompt fixation. Using LoRAs Turbo, it's capable of producing very realistic images within few steps. It's one of my most frequently used model, which says a lot. I am messing around with the Qwen Image Edit 2511 model; I will implement a Workflow based on it in the near future.
+One of the few local models that can edit an image using contextual language. Compared to the Flux2 Klein, this model takes longer to edit a image and it has a few flaws; for instance, you can't change the style of one image using another (I recommend using LoRA for this). But in terms of consistency in a person's anatomy, this one is more efficient. Overall, a very powerful model.
+
+I've created this Workflows so far:
+- Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base. I've added a Simple Prompt Batcher so you can change an image multiple times, using different types of prompts, without needing to make one by one.
+
+Folder to the Workflows [Qwen](./Workflows/QWEN/).
+Folder with example [Images](./Images/QWEN/).
+
+#### Qwen2512
+![Qwen2512 Collage](./Images/Qwen2512.png)
+
+It's an extremely versatile model with excellent performance and prompt fixation. Using LoRAs Turbo, it's capable of producing very realistic images within few steps. It's one of my most frequently used model, which says a lot.
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image.
