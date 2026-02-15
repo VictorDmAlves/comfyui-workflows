@@ -36,6 +36,7 @@ To use this Workflows, install the following custom_nodes in your ComfyUI (you p
 - [rgthree-comfy](https://github.com/rgthree/rgthree-comfy).
 - [WAS Node Suite (Revised)](https://github.com/ltdrdata/was-node-suite-comfyui).
 - [Z-Image Power Nodes](https://github.com/martin-rizzo/ComfyUI-ZImagePowerNodes).
+- [ComfyUI WD 1.4 Tagger](https://github.com/pythongosssss/ComfyUI-WD14-Tagger).
 
 ## Tips and Tricks
 - Change Models: In all my Workflows, you will see that is included a SeedVR2 Workflow for all models. In addition to the features it provides, it can be used to transform an image into another image using a different model thanks to the second KSampler. For instance, you can take an image created in Z-Image-Turbo and place it directly into Flux's SeedVR2. Not only will it transform the image into a Flux image, but it will also allow you to maintain the similarity between the models as much as possible.
