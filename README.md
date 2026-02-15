@@ -172,11 +172,12 @@ Folder with example [Images](./Images/ANIMA/).
 
 For all my LoRA training, I always used captions. Furthermore, one of its uses is to analyze any image and generate a prompt to be used in image generation.
 
-Both Workflows are very similar; both have a way to caption one image or a batch of images, saving them in a folder afterwards.
+This Workflows are very similar; they have a way to caption one image or a batch of images, saving them in a folder afterwards.
 
 I've created this Workflows so far:
 - Florence2: The most fast and consistent model to use. Sometimes it can be a little shallow in details, but it still the best in my opinion.
 - QwenVL: The most complete model for captions, but it can hallucinate a lot and be very inconsistent. One of the best things about it is that you can give instructions on how to caption an image, just like ChatGPT; I left a instruction as example within this Workflow.
+- WD 1.4 Tagger: The go-to model if you want to produce captions with danbooru-style tags.
 
 Folder to the Workflows [Captions](./Workflows/CAPTIONS/).
 Folder with example [Images and Captions](./Images/CAPTIONS/).
