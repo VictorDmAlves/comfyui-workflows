@@ -42,6 +42,7 @@ To use this Workflows, install the following custom_nodes in your ComfyUI (you p
 ## Tips and Tricks
 - Change Models: In all my Workflows, you will see that is included a SeedVR2 Workflow for all models. In addition to the features it provides, it can be used to transform an image into another image using a different model thanks to the second KSampler. For instance, you can take an image created in Z-Image-Turbo and place it directly into Flux's SeedVR2. Not only will it transform the image into a Flux image, but it will also allow you to maintain the similarity between the models as much as possible.
 - Swap Characters: For Flux2 Klein, let's say that you want to swap characters between X (real life photo) with Y (art style photo). It's better to replace the background of X to a white color, then change his style to be exactly the same art style of Y to finaly ask Klein to, with this two changes done, swap X with Y, keeping the same pose if you like. Thanks to [arthan1011](https://www.reddit.com/r/comfyui/comments/1qs2h6p/replace_this_character_workflow_with_flux2_klein/) for this find.
+- Upscale technique for Flux and Flux2: For both of this models, has a technique to upscale a image using tiles together with SeedVR2. Because it divides the image into tiles, performing individual upscaling, when everything is combined into a single image, the result is truly impressive. Thanks to [Wei Mao](https://www.youtube.com/watch?v=QHn6Qg59e8Y) for this find.
 
 Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 
@@ -131,6 +132,7 @@ I've created this Workflows so far:
 - TXT2IMG: A simple text to image, using the correct nodes for Flux2.
 - Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base. I've added a Simple Prompt Batcher so you can change an image multiple times, using different types of prompts, without needing to make one by one.
 - SeedVR2 Upscaler: Just like before, but with a twist. First it runs through a second KSampler following your instructions (for reference I left one in the Workflow). After that, by enabling the group "SeedVR2", you can upscale the image.
+- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
 
 Folder to the Workflows [Flux2](./Workflows/FLUX-2/).
 Folder with example [Images](./Images/FLUX-2/).
@@ -149,7 +151,8 @@ I've created this Workflows so far:
 - Inpaint and Outpaint: I developed this Workflow to be as simple as possible. You choose an image, define whether you want to create a mask yourself or let Florence2 do it, then select whether you want to do inpaint or outpaint of the respective mask.
 - XY Plot: I created this Workflow to compare and show, for example, the differences between a range of strength values of a LoRA. You can adapt this Workflow to make any other comparisons.
 - SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-- Ultimate SD Upscaler: For those who prefer the inference and quality control of this upscaler.
+- Ultimate SD Upscaler: For those who prefer the inference, dividing by blocks, and quality control of this upscaler. I would say that, for some cases, this one is still the best; though your mileage may vary.
+- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
 
 Folder to the Workflows [Flux](./Workflows/FLUX/).
 Folder with example [Images](./Images/FLUX/).
