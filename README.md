@@ -38,11 +38,13 @@ To use this Workflows, install the following custom_nodes in your ComfyUI (you p
 - [Z-Image Power Nodes](https://github.com/martin-rizzo/ComfyUI-ZImagePowerNodes).
 - [ComfyUI WD 1.4 Tagger](https://github.com/pythongosssss/ComfyUI-WD14-Tagger).
 - [ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale).
+- [ComfyUI Layer Style](https://github.com/chflame163/ComfyUI_LayerStyle).
 
 ## Tips and Tricks
 - Change Models: In all my Workflows, you will see that is included a SeedVR2 Workflow for all models. In addition to the features it provides, it can be used to transform an image into another image using a different model thanks to the second KSampler. For instance, you can take an image created in Z-Image-Turbo and place it directly into Flux's SeedVR2. Not only will it transform the image into a Flux image, but it will also allow you to maintain the similarity between the models as much as possible.
 - Swap Characters: For Flux2 Klein, let's say that you want to swap characters between X (real life photo) with Y (art style photo). It's better to replace the background of X to a white color, then change his style to be exactly the same art style of Y to finaly ask Klein to, with this two changes done, swap X with Y, keeping the same pose if you like. Thanks to [arthan1011](https://www.reddit.com/r/comfyui/comments/1qs2h6p/replace_this_character_workflow_with_flux2_klein/) for this find.
 - Upscale technique for Flux and Flux2: For both of this models, has a technique to upscale a image using tiles together with SeedVR2. Because it divides the image into tiles, performing individual upscaling, when everything is combined into a single image, the result is truly impressive. Thanks to [Wei Mao](https://www.youtube.com/watch?v=QHn6Qg59e8Y) for this find.
+- Two LoRA in one image: Recently I discovered Illustrious model and fell in love with the SDXL again (I believe Anima helped me with that). That said, I was curious to know if there was a way to place two LoRAs of different characters in a single image, using only one KSampler, without creating artifacts or duplicates. Here's the Workflow with Hooks, a technique that consists of rendering each LoRA in a piece of the image using masks, combining them afterwards. Thanks to [Nikhil Setiya](https://www.youtube.com/watch?v=zhJJcegZ0MQ) for this find.
 
 Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 
@@ -91,8 +93,11 @@ One of the best models for producing illustrative and even realistic content. Wi
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image.
 - IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
-- Inpaint: A Workflow that allows you to use Florence2 to mark the area that you want to be inpainted, or paint a mark manually using the MaskEditor. Don't forget to use Checkpoints created specifically for inpaint.
+- Inpaint & Outpaint: I developed this Workflow to be as simple as possible. You choose an image, define whether you want to create a mask yourself or let Florence2 do it, then select whether you want to do inpaint or outpaint of the respective mask.
+- Two LoRA Hooks: This Workflow helps generate an image using two distinct LoRAs together, without creating artifacts or duplicates. You can combine two characters, two image styles, or two pose styles.
 - SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
+- XY Plot: I created this Workflow to compare and show, for example, the differences between a range of strength values of a LoRA. You can adapt this Workflow to make any other comparisons.
 
 Folder to the Workflows [SD-SDXL](./Workflows/SD-SDXL/).
 Folder with example [Images](./Images/SD-SDXL/).
@@ -149,10 +154,10 @@ I've created this Workflows so far:
 - IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
 - Face Detailer: A Workflow that allows you to enhance a face in an image without altering other information. Useful for images of people at a distance, which often loses quality during image generation.
 - Inpaint and Outpaint: I developed this Workflow to be as simple as possible. You choose an image, define whether you want to create a mask yourself or let Florence2 do it, then select whether you want to do inpaint or outpaint of the respective mask.
-- XY Plot: I created this Workflow to compare and show, for example, the differences between a range of strength values of a LoRA. You can adapt this Workflow to make any other comparisons.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 - Ultimate SD Upscaler: For those who prefer the inference, dividing by blocks, and quality control of this upscaler. I would say that, for some cases, this one is still the best; though your mileage may vary.
+- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 - Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
+- XY Plot: I created this Workflow to compare and show, for example, the differences between a range of strength values of a LoRA. You can adapt this Workflow to make any other comparisons.
 
 Folder to the Workflows [Flux](./Workflows/FLUX/).
 Folder with example [Images](./Images/FLUX/).
