@@ -174,6 +174,7 @@ I recommend checking out their [page](https://huggingface.co/circlestone-labs/An
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image.
 - SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
 
 Folder to the Workflows [Anima](./Workflows/ANIMA/).
 Folder with example [Images](./Images/ANIMA/).
