@@ -165,19 +165,40 @@ Folder with example [Images](./Images/FLUX/).
 #### Anima
 ![Anima Collage](./Images/Anima.png)
 
-This is an experimental model that the folks at CircleStone Labs are developing in collaboration with Comfy Org. It's still in the training phase; there isn't even a Checkpoint yet.
+This is an extraordinary model that the folks at CircleStone Labs are developing in collaboration with Comfy Org. It is currently in base version 1.0.
 
-I see a lot of potential for the model, especially when it comes to realism and fixation for generating anime-style images. As you can see, I didn't build a IMG2IMG Workflow since it's not following well the reference images; maybe in the future.
+I see a lot of potential for the model, especially when it comes to realism and fixation for generating anime-style images (even realistic ones). I'm studying a way to use ControlNet for IMG2IMG; almost there.
 
 I recommend checking out their [page](https://huggingface.co/circlestone-labs/Anima) for more information about prompts and tags.
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image.
+- IMG2IMG: A image to image implementation.
 - SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 - Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
 
 Folder to the Workflows [Anima](./Workflows/ANIMA/).
 Folder with example [Images](./Images/ANIMA/).
+
+#### Ideogram 4.0
+![Ideogram4 Collage](./Images/Ideogram4.png)
+
+Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the text mentioned in the [Ideogram4](./Ideogram4.txt) file to generate a prompt with LMM in JSON format.
+
+Also, it's possible to use bboxes (rectangles) to specify where each object is located in the scene, which is quite impressive. The model quality is excellent and the training seems to be very efficient, although I haven't done any yet (community opinion).
+
+I separated the Prompt Builder part from Kjnodes because – if you have other models that use Qwen as CLIP – you can use this Workflow to generate the JSON format for them as well.
+
+You'll notice that I didn't use the two Ideogram models (normal and unconditional). I obtained better results without the latter. I'm also not using GGUF, only for the CLIP, mainly because it's not yet supported in ComfyUI.
+
+I've created this Workflows so far:
+- TXT2IMG: A simple text to image.
+- IMG2IMG: A image to image implementation.
+- Prompt Builder: A simple way to load an image or a prompt, converting it to text in JSON format; it's also possible to create all the bboxes within this Workflow.
+- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+
+Folder to the Workflows [Ideogram](./Workflows/IDEOGRAM-4/).
+Folder with example [Images](./Images/IDEOGRAM-4/).
 
 #### Captions
 ![Captions Collage](./Images/Captions.png)
