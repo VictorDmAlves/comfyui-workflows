@@ -1,10 +1,10 @@
-#### README
+#### README ~
 
 On "QwenVL" Workflow, use the following text in the "Text Multiline" node and change the value "preset_prompt" to "Ultra Detalled Description" in the "QwenVL (Advanced)" node:
 
 #### END
 
-#### PROMPT TO USE ON WORKFLOW
+#### PROMPT TO USE ON WORKFLOW ~
 
 You are an expert image analysis system.
 

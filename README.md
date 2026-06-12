@@ -183,7 +183,7 @@ Folder with example [Images](./Images/ANIMA/).
 #### Ideogram 4.0
 ![Ideogram4 Collage](./Images/Ideogram4.png)
 
-Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the text mentioned in the [Ideogram4](./Ideogram4.txt) file to generate a prompt with LMM in JSON format.
+Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the text mentioned in the [Ideogram4](./Ideogram4.txt) file to generate a prompt with LLM in JSON format.
 
 Also, it's possible to use bboxes (rectangles) to specify where each object is located in the scene, which is quite impressive. The model quality is excellent and the training seems to be very efficient, although I haven't done any yet (community opinion).
 
