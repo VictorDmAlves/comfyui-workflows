@@ -53,12 +53,13 @@ Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 #### Z-Image-Turbo
 ![Z-Image-Turbo Collage](./Images/Z-Image-Turbo.png)
 
-This model is fast, but a little all over the place. Somewhat realistic and versatile. It's recommended to use the Z-Image for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent nevertheless.
+This model is fast, but a little all over the place. Somewhat realistic and versatile. It's recommended to use the Z-Image Base for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent nevertheless.
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image using a custom_node with styles presets.
 - IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
 - SeedVR2 Upscaler: First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
 
 Folder to the Workflows [Z-Image](./Workflows/Z-IMAGE/).
 Folder with example [Images](./Images/Z-IMAGE/).
