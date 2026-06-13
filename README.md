@@ -53,13 +53,14 @@ Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 #### Z-Image-Turbo
 ![Z-Image-Turbo Collage](./Images/Z-Image-Turbo.png)
 
-This model is fast, but a little all over the place. Somewhat realistic and versatile. It's recommended to use the Z-Image Base for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent nevertheless.
+My new favorite model, both for its speed and for its quality, fixation and consistency. Really versatile. It's recommended to use the Z-Image Base for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent nevertheless. I'm loving creating LoRAs for this model; hope to share with you all someday in the future.
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image using a custom_node with styles presets.
 - IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
 - SeedVR2 Upscaler: First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 - Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
+- XY Plot: I created this Workflow to compare and show, for example, the differences between a range of strength values of a LoRA. You can adapt this Workflow to make any other comparisons.
 
 Folder to the Workflows [Z-Image](./Workflows/Z-IMAGE/).
 Folder with example [Images](./Images/Z-IMAGE/).
@@ -89,7 +90,7 @@ Folder with example [Images and Video](./Images/WAN/).
 #### SD-SDXL
 ![SD-SDXL Collage](./Images/SD-SDXL.png)
 
-One of the best models for producing illustrative and even realistic content. With its huge range of LoRAs and Checkpoints, and because it has been around for a while, it remains an indispensable model to this day, not to mention its speed.
+One of the best models for producing illustrative and even realistic content. With its huge range of LoRAs and Checkpoints, and because it has been around for a while, it remains an indispensable model to this day.
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image.
@@ -132,7 +133,7 @@ Folder with example [Images](./Images/QWEN/).
 
 This is the model that has impressed me the most so far. Extremely easy to use, it has spectacular quality and excellent speed. This model can make context-sensitive adjustments, very similar to Gemini and ChatGPT, which represents a major advance in the generation of images locally. Unfortunately, on my current machine, I can't use Flux2, only Klein. Maybe one day I'll upgrade and create Workflows for it; but in the current market situation, it will take a while.
 
-In any of this Workflows, you can use either the 4B model or the 9B model; just don't forget to change the CLIP as well.
+In any of this Workflows, you can use either the 4B model or the 9B model; just don't forget to change the CLIP for them as well.
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image, using the correct nodes for Flux2.
@@ -146,7 +147,7 @@ Folder with example [Images](./Images/FLUX-2/).
 #### Flux
 ![Flux Collage](./Images/Flux.png)
 
-My preferred model when it comes to realism and LoRA training. Besides being realistic, it can make changes to images, enlarge a photo, and contextually fill it with more information. A complete model, albeit a large one. I'm using Flux Fill as well, specially for outpainting.
+Used to be my preferred model when it comes to realism and LoRA training, although I haven't stopped using it here and there. Besides being realistic, it can make changes to images, enlarge a photo, and contextually fill it with more information. A complete model, albeit a large one. I'm using Flux Fill as well, specially for outpainting.
 
 Flux uses two CLIP, and its best application is to use short tags in "Clip-l" and detailed text in "T5".
 
@@ -163,12 +164,32 @@ I've created this Workflows so far:
 Folder to the Workflows [Flux](./Workflows/FLUX/).
 Folder with example [Images](./Images/FLUX/).
 
+#### Ideogram 4.0
+![Ideogram4 Collage](./Images/Ideogram4.png)
+
+Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the guided text mentioned in the [Ideogram4](./Ideogram4.txt) file to generate a prompt with LLM in JSON format, since this model required one.
+
+The great advantage of this model is that it's possible to use bboxes (rectangles shapes) to specify where each object is located in the scene, which is quite impressive; the model quality is excellent.
+
+I separated the Prompt Builder part using Kjnodes because – if you have other models that use Qwen as CLIP – you can use this Workflow to generate the JSON format for them as well (although I don't know which models have support).
+
+You'll notice that I didn't use the two Ideogram models (normal and unconditional) since I obtained better results without the latter; I'm also not using GGUF, only for the CLIP, mainly because it's not yet supported in ComfyUI.
+
+I've created this Workflows so far:
+- TXT2IMG: A simple text to image.
+- IMG2IMG: A image to image implementation.
+- Prompt Builder: A simple way to load an image or a prompt, converting it to text in JSON format; it's also possible to create all the bboxes within this Workflow.
+- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+
+Folder to the Workflows [Ideogram](./Workflows/IDEOGRAM-4/).
+Folder with example [Images](./Images/IDEOGRAM-4/).
+
 #### Anima
 ![Anima Collage](./Images/Anima.png)
 
 This is an extraordinary model that the folks at CircleStone Labs are developing in collaboration with Comfy Org. It is currently in base version 1.0.
 
-I see a lot of potential for the model, especially when it comes to realism and fixation for generating anime-style images (even realistic ones). I'm studying a way to use ControlNet for IMG2IMG; almost there.
+I see a lot of potential for the model, especially when it comes to overall quality and fixation for generating anime-style images (in some cases, even for realistic images). I'm studying a way to use ControlNet for image to image; almost there.
 
 I recommend checking out their [page](https://huggingface.co/circlestone-labs/Anima) for more information about prompts and tags.
 
@@ -180,26 +201,6 @@ I've created this Workflows so far:
 
 Folder to the Workflows [Anima](./Workflows/ANIMA/).
 Folder with example [Images](./Images/ANIMA/).
-
-#### Ideogram 4.0
-![Ideogram4 Collage](./Images/Ideogram4.png)
-
-Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the text mentioned in the [Ideogram4](./Ideogram4.txt) file to generate a prompt with LLM in JSON format.
-
-Also, it's possible to use bboxes (rectangles) to specify where each object is located in the scene, which is quite impressive. The model quality is excellent and the training seems to be very efficient, although I haven't done any yet (community opinion).
-
-I separated the Prompt Builder part from Kjnodes because – if you have other models that use Qwen as CLIP – you can use this Workflow to generate the JSON format for them as well.
-
-You'll notice that I didn't use the two Ideogram models (normal and unconditional). I obtained better results without the latter. I'm also not using GGUF, only for the CLIP, mainly because it's not yet supported in ComfyUI.
-
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image.
-- IMG2IMG: A image to image implementation.
-- Prompt Builder: A simple way to load an image or a prompt, converting it to text in JSON format; it's also possible to create all the bboxes within this Workflow.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-
-Folder to the Workflows [Ideogram](./Workflows/IDEOGRAM-4/).
-Folder with example [Images](./Images/IDEOGRAM-4/).
 
 #### Captions
 ![Captions Collage](./Images/Captions.png)
