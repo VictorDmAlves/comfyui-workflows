@@ -39,6 +39,7 @@ To use this Workflows, install the following custom_nodes in your ComfyUI (you p
 - [ComfyUI WD 1.4 Tagger](https://github.com/pythongosssss/ComfyUI-WD14-Tagger).
 - [ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale).
 - [ComfyUI Layer Style](https://github.com/chflame163/ComfyUI_LayerStyle).
+- [Kiko Prompt Builder](https://github.com/ComfyAssets/kiko-flux2-prompt-builder).
 
 ## Tips and Tricks
 - Change Models: In all my Workflows, you will see that is included a SeedVR2 Workflow for all models. In addition to the features it provides, it can be used to transform an image into another image using a different model thanks to the second KSampler. For instance, you can take an image created in Z-Image-Turbo and place it directly into Flux's SeedVR2. Not only will it transform the image into a Flux image, but it will also allow you to maintain the similarity between the models as much as possible.
@@ -136,7 +137,7 @@ This is the model that has impressed me the most so far. Extremely easy to use, 
 In any of this Workflows, you can use either the 4B model or the 9B model; just don't forget to change the CLIP for them as well.
 
 I've created this Workflows so far:
-- TXT2IMG: A simple text to image, using the correct nodes for Flux2.
+- TXT2IMG: A simple text to image using a custom_node with styles presets and more.
 - Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base. I've added a Simple Prompt Batcher so you can change an image multiple times, using different types of prompts, without needing to make one by one.
 - SeedVR2 Upscaler: Just like before, but with a twist. First it runs through a second KSampler following your instructions (for reference I left one in the Workflow). After that, by enabling the group "SeedVR2", you can upscale the image.
 - Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
@@ -171,7 +172,7 @@ Another model with a bright future, although it's quite slow and a bit complicat
 
 The great advantage of this model is that it's possible to use bboxes (rectangles shapes) to specify where each object is located in the scene, which is quite impressive; the model quality is excellent.
 
-I separated the Prompt Builder part using Kjnodes because – if you have other models that use Qwen as CLIP – you can use this Workflow to generate the JSON format for them as well (although I don't know which models have support).
+I separated the Prompt Builder part using Kjnodes because – if you have other models that use Qwen as CLIP – you can use this Workflow to generate the JSON format for them as well (like Flux2 Klein).
 
 You'll notice that I didn't use the two Ideogram models (normal and unconditional) since I obtained better results without the latter; I'm also not using GGUF, only for the CLIP, mainly because it's not yet supported in ComfyUI.
 
