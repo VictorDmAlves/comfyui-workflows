@@ -59,6 +59,7 @@ My new favorite model, both for its speed and for its quality, fixation and cons
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image using a custom_node with styles presets.
 - IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
+- Inpaint & Outpaint: I developed this Workflow to be as simple as possible. You choose an image, define whether you want to create a mask yourself or let Florence2 do it, then select whether you want to do inpaint or outpaint of the respective mask.
 - SeedVR2 Upscaler: First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 - Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
 - XY Plot: I created this Workflow to compare and show, for example, the differences between a range of strength values of a LoRA. You can adapt this Workflow to make any other comparisons.
