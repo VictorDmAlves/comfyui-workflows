@@ -189,14 +189,14 @@ Folder with example [Images](./Images/IDEOGRAM-4/).
 #### Anima
 ![Anima Collage](./Images/Anima.png)
 
-This is an extraordinary model that the folks at CircleStone Labs are developing in collaboration with Comfy Org. It is currently in base version 1.0.
+This is an extraordinary model that the folks at CircleStone Labs are developing in collaboration with Comfy Org. It is currently in base version 1.0 and has variations like the "Aesthetic" and "Turbo" versions (the latter of which I recommend using).
 
 I see a lot of potential for the model, especially when it comes to overall quality and fixation for generating anime-style images (in some cases, even for realistic images). I'm studying a way to use ControlNet for image to image; almost there.
 
 I recommend checking out their [page](https://huggingface.co/circlestone-labs/Anima) for more information about prompts and tags.
 
 I've created this Workflows so far:
-- TXT2IMG: A simple text to image.
+- TXT2IMG: A simple text to image (I put the Turbo version separately).
 - IMG2IMG: A image to image implementation.
 - SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 - Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
