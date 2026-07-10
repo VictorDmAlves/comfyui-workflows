@@ -24,7 +24,7 @@ To use this Workflows, install the following custom_nodes in your ComfyUI (you p
 - [ComfyUI Essentials](https://github.com/cubiq/ComfyUI_essentials).
 - [ComfyUI-Detail-Daemon](https://github.com/Jonseed/ComfyUI-Detail-Daemon).
 - [Florence2 in ComfyUI](https://github.com/kijai/ComfyUI-Florence2).
-- [ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF).
+- [ComfyUI-GGUF_KREA-2](https://github.com/RealRebelAI/ComfyUI-GGUF_KREA-2).
 - [ComfyUI-Impact-Pack](https://github.com/ltdrdata/ComfyUI-Impact-Pack).
 - [ComfyUI-Impact-Subpack](https://github.com/ltdrdata/ComfyUI-Impact-Subpack).
 - [ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack).
@@ -130,8 +130,28 @@ I've created this Workflows so far:
 Folder to the Workflows [Qwen](./Workflows/QWEN/).
 Folder with example [Images](./Images/QWEN/).
 
+#### Flux2 Krea
+![Flux 2 Krea Collage](./Images/Flux2_Krea.png)
+
+Although I categorize it as Flux2 in my workflows, it is a model trained from scratch that uses Qwen3-VL as the text encoder and the Qwen Image VAE for decoding. I am using the "Turbo" version and am quite impressed with its quality and speed.
+
+This model can also interpret JSON files containing bboxes (bounding boxes in rectangles shapes), much like Ideogram 4.0, although both, of course, yield results that are quite different from one another.
+
+To use this model with GGUF, you need a specific custom_node, a fork of "city96/ComfyUI-GGUF" which supplements the original node, given that the author hasn't updated that project in months. I replaced it with this new one in my Workflows!
+
+I am still learning how to use it more effectively; I haven't implemented anything with ControlNet yet, for example. But one step at a time!
+
+I've created this Workflows so far:
+- TXT2IMG: A simple text to image using a custom_node with styles presets and more.
+- IMG2IMG: A image to image implementation.
+- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
+
+Folder to the Workflows [Flux2](./Workflows/FLUX-2/).
+Folder with example [Images](./Images/FLUX-2/).
+
 #### Flux2 Klein
-![Flux 2 Klein Collage](./Images/Flux2.png)
+![Flux 2 Klein Collage](./Images/Flux2_Klein.png)
 
 This is the model that has impressed me the most so far. Extremely easy to use, it has spectacular quality and excellent speed. This model can make context-sensitive adjustments, very similar to Gemini and ChatGPT, which represents a major advance in the generation of images locally. Unfortunately, on my current machine, I can't use Flux2, only Klein. Maybe one day I'll upgrade and create Workflows for it; but in the current market situation, it will take a while.
 
@@ -140,6 +160,7 @@ In any of this Workflows, you can use either the 4B model or the 9B model; just 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image using a custom_node with styles presets and more.
 - Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base. I've added a Simple Prompt Batcher so you can change an image multiple times, using different types of prompts, without needing to make one by one.
+- Image Edit in Bulk: For instance, if you want to remove watermarks from images and don't want to do it one by one, this Workflow will help make the task easier and more automated.
 - SeedVR2 Upscaler: Just like before, but with a twist. First it runs through a second KSampler following your instructions (for reference I left one in the Workflow). After that, by enabling the group "SeedVR2", you can upscale the image.
 - Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
 
@@ -171,7 +192,7 @@ Folder with example [Images](./Images/FLUX/).
 
 Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the guided text mentioned in the [Ideogram4](./Ideogram4.txt) file to generate a prompt with LLM in JSON format, since this model required one.
 
-The great advantage of this model is that it's possible to use bboxes (rectangles shapes) to specify where each object is located in the scene, which is quite impressive; the model quality is excellent.
+The great advantage of this model is that it's possible to use bboxes (bounding boxes in rectangles shapes) to specify where each object is located in the scene, which is quite impressive; the model quality is excellent.
 
 I separated the Prompt Builder part using Kjnodes because – if you have other models that use Qwen as CLIP – you can use this Workflow to generate the JSON format for them as well (like Flux2 Klein).
 
