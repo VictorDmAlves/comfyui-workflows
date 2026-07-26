@@ -56,7 +56,7 @@ Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 
 My new favorite model, both for its speed and for its quality, fixation and consistency. Really versatile. It's recommended to use the Z-Image Base for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent nevertheless. I'm loving creating LoRAs for this model; hope to share with you all someday in the future.
 
-I am starting to use Wildcards to create custom, dynamic images. To that end, I am also attaching the [Wildcards](.Wildcards/) I use for Z-Image-Turbo (they work with other models as well).
+I am starting to use Wildcards to create custom, dynamic images. To that end, I am also attaching the [Wildcards](./Wildcards/) I use for Z-Image-Turbo (they work with other models as well).
 
 I have included further instructions on how to use them within the Workflows. I am still getting used to this system; I will update the other Workflows as soon as possible.
 
@@ -194,7 +194,7 @@ Folder with example [Images](./Images/FLUX/).
 #### Ideogram 4.0
 ![Ideogram4 Collage](./Images/Ideogram4.png)
 
-Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the guided text mentioned in the [Ideogram4](.Ideogram4/Generate_Prompt.txt) file to generate a prompt with LLM in JSON format, since this model required one.
+Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the guided text mentioned in the [Ideogram4](./Ideogram4/) file to generate a prompt with LLM in JSON format, since this model required one.
 
 The great advantage of this model is that it's possible to use bboxes (bounding boxes in rectangles shapes) to specify where each object is located in the scene, which is quite impressive; the model quality is excellent.
 
