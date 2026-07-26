@@ -56,8 +56,12 @@ Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 
 My new favorite model, both for its speed and for its quality, fixation and consistency. Really versatile. It's recommended to use the Z-Image Base for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent nevertheless. I'm loving creating LoRAs for this model; hope to share with you all someday in the future.
 
+I am starting to use Wildcards to create custom, dynamic images. To that end, I am also attaching the [Wildcards](.Wildcards/) I use for Z-Image-Turbo (they work with other models as well).
+
+I have included further instructions on how to use them within the Workflows. I am still getting used to this system; I will update the other Workflows as soon as possible.
+
 I've created this Workflows so far:
-- TXT2IMG: A simple text to image using a custom_node with styles presets.
+- TXT2IMG: A simple text to image using a custom_node with styles presets and Wildcard support.
 - IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
 - Inpaint: I developed this Workflow to be as simple as possible. You choose an image, define whether you want to create a mask yourself or let Florence2 do it, then proceed with the inpaint when you ready.
 - SeedVR2 Upscaler: First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
@@ -133,7 +137,7 @@ Folder with example [Images](./Images/QWEN/).
 #### Flux2 Krea
 ![Flux 2 Krea Collage](./Images/Flux2_Krea.png)
 
-Although I categorize it as Flux2 in my workflows, it is a model trained from scratch that uses Qwen3-VL as the text encoder and the Qwen Image VAE for decoding. I am using the "Turbo" version and am quite impressed with its quality and speed.
+Although I categorize it as Flux2 in my Workflows, it is a model trained from scratch that uses Qwen3-VL as the text encoder and the Qwen Image VAE for decoding. I am using the "Turbo" version and am quite impressed with its quality and speed.
 
 This model can also interpret JSON files containing bboxes (bounding boxes in rectangles shapes), much like Ideogram 4.0, although both, of course, yield results that are quite different from one another.
 
@@ -190,7 +194,7 @@ Folder with example [Images](./Images/FLUX/).
 #### Ideogram 4.0
 ![Ideogram4 Collage](./Images/Ideogram4.png)
 
-Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the guided text mentioned in the [Ideogram4](./Ideogram4.txt) file to generate a prompt with LLM in JSON format, since this model required one.
+Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the guided text mentioned in the [Ideogram4](.Ideogram4/Generate_Prompt.txt) file to generate a prompt with LLM in JSON format, since this model required one.
 
 The great advantage of this model is that it's possible to use bboxes (bounding boxes in rectangles shapes) to specify where each object is located in the scene, which is quite impressive; the model quality is excellent.
 
