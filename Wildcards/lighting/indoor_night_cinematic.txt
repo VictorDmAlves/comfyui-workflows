@@ -1,5 +1,5 @@
 low-key cinematic lighting with deep warm shadows and soft amber highlights
-motivated practical lighting from visible sources with realistic color temperature and natural falloff
+motivated practical lighting from not visible sources with realistic color temperature and natural falloff
 soft rim lighting with warm golden edges and subtle background separation
 dramatic side lighting with strong contrast, warm highlights and cooler shadow tones
 strong directional lighting with defined light source, rich color gradients and realistic shadows

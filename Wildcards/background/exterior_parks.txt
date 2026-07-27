@@ -1,7 +1,7 @@
-public park, walking paths, mature trees
-botanical garden, ornamental plants, landscaped pathways
-city park, open lawns, recreational green space
-nature reserve, protected landscape, native vegetation
-arboretum, diverse tree collections, maintained trails
-memorial garden, decorative landscaping, peaceful setting
-national park, preserved wilderness, scenic viewpoints
+public park, walking paths with mature trees
+botanical garden, ornamental plants with landscaped pathways
+city park, open lawns and recreational green space
+nature reserve, protected landscape and native vegetation
+arboretum, diverse tree collections and maintained trails
+memorial garden, decorative landscaping with peaceful setting
+national park, preserved wilderness with scenic viewpoints

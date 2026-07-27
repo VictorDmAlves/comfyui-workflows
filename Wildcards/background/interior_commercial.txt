@@ -1,10 +1,10 @@
-coffee shop, wooden furniture, cozy interior
-modern cafe, contemporary decor, clean layout
-fine dining restaurant, elegant furniture, refined decor
-boutique clothing store, designer displays, premium finishes
-luxury jewelry boutique, glass showcases, elegant interior
-bakery, wooden shelves, artisan presentation
-bookstore, floor-to-ceiling bookshelves, reading spaces
-flower shop, abundant floral arrangements, rustic displays
-beauty salon, modern styling stations, elegant mirrors
-hotel lobby, marble flooring, luxury seating
+coffee shop, wooden furniture with cozy interior
+modern cafe, contemporary decor with clean layout
+fine dining restaurant, elegant furniture with refined decor
+boutique clothing store, designer displays with premium finishes
+luxury jewelry boutique, glass showcases and elegant interior
+bakery, wooden shelves with artisan presentation
+bookstore, floor-to-ceiling bookshelves and reading spaces
+flower shop, abundant floral arrangements and rustic displays
+beauty salon, modern styling stations with elegant mirrors
+hotel lobby, marble flooring with luxury seating

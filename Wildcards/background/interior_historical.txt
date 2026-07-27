@@ -1,7 +1,7 @@
-medieval castle hall, stone walls, vaulted ceiling
-royal palace interior, gilded decorations, grand architecture
-historic cathedral interior, Gothic arches, stained glass
-ancient temple hall, carved stone columns, ceremonial space
-historic monastery, stone corridors, traditional architecture
-renaissance palace, frescoed ceilings, marble columns
-Victorian mansion, ornate woodwork, period furnishings
+medieval castle hall, stone walls with vaulted ceiling
+royal palace interior, gilded decorations with grand architecture
+historic cathedral interior, Gothic arches with stained glass
+ancient temple hall, carved stone columns and ceremonial space
+historic monastery, stone corridors with traditional architecture
+renaissance palace, frescoed ceilings and marble columns
+Victorian mansion, ornate woodwork with period furnishings

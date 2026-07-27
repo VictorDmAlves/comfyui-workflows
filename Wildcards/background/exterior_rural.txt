@@ -1,8 +1,8 @@
-country road, open farmland, wooden fences
-rolling countryside, cultivated fields, rustic scenery
-working farm, agricultural buildings, open fields
-vineyard, orderly grapevine rows, gentle hills
-orchard, fruit trees, maintained pathways
-ranch, fenced pastureland, rustic structures
-open grassland, rural landscape, dirt roads
-traditional countryside village, stone houses, rural charm
+country road, open farmland with wooden fences
+rolling countryside, cultivated fields with rustic scenery
+working farm, agricultural buildings and open fields
+vineyard, orderly grapevine rows and gentle hills
+orchard, fruit trees with maintained pathways
+ranch, fenced pastureland and rustic structures
+open grassland, rural landscape and dirt roads
+traditional countryside village, stone houses with rural charm

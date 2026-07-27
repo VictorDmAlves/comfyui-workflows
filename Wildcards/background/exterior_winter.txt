@@ -1,6 +1,6 @@
-snow-covered landscape, evergreen trees, open terrain
-winter forest, snow-laden branches, natural scenery
-mountain village, snow-covered rooftops, alpine architecture
-frozen lakeshore, icy landscape, natural shoreline
-snow-covered countryside, rustic buildings, open fields
-winter park, snow-covered pathways, bare trees
+snow-covered landscape, evergreen trees with open terrain
+winter forest, snow-laden branches with natural scenery
+mountain village, snow-covered rooftops with alpine architecture
+frozen lakeshore, icy landscape with natural shoreline
+snow-covered countryside, rustic buildings with open fields
+winter park, snow-covered pathways with bare trees

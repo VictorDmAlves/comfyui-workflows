@@ -1,7 +1,7 @@
-industrial district, warehouses, steel structures
-shipping yard, cargo facilities, industrial infrastructure
-factory complex, large industrial buildings
-warehouse loading area, service roads, logistics facilities
-construction site, unfinished structures, heavy equipment
-industrial park, manufacturing facilities, wide access roads
-shipping containers, logistics terminal, paved yards
+industrial district, warehouses and steel structures
+shipping yard, cargo facilities and industrial infrastructure
+factory complex with large industrial buildings
+warehouse loading area, service roads and logistics facilities
+construction site, unfinished structures and heavy equipment
+industrial park, manufacturing facilities and wide access roads
+shipping containers, logistics terminal and paved yards

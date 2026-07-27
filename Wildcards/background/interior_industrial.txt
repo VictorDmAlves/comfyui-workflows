@@ -1,6 +1,6 @@
-industrial loft, exposed brick walls, steel beams
-industrial apartment, polished concrete floors, exposed piping
-warehouse conversion, steel columns, open-plan interior
-industrial office, exposed ceilings, metal fixtures
-creative studio, concrete walls, factory windows
-industrial workshop, raw materials, utilitarian design
+industrial loft, exposed brick walls with steel beams
+industrial apartment, polished concrete floors with exposed piping
+warehouse conversion, steel columns with open-plan interior
+industrial office, exposed ceilings with metal fixtures
+creative studio, concrete walls with factory windows
+industrial workshop, raw materials with utilitarian design
