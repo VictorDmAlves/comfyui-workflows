@@ -63,7 +63,7 @@ My new favorite model, both for its speed and for its quality, fixation and cons
 
 I started using Wildcards to try to generate dynamic and unique images. For now, I'm using entire prompts, varying between them to maintain a bit more control. To that end, I am also attaching the [Wildcards](./Wildcards/) I use for this model.
 
-I am also including an additional Workflow (TXT2IMG only, for now) that integrates two of my custom_nodes; both serve to provide better control over Wildcard prompts and to allow for persistent image viewing. For more details, please refer to the section [Optional](## Optional).
+I am also including an additional Workflow (TXT2IMG only, for now) that integrates two of my custom_nodes; both serve to provide better control over Wildcard prompts and to allow for persistent image viewing. For more details, please refer to the section [Optional](#Optional).
 
 I am still getting used to this system; I will update the other Workflows as soon as possible.
 
