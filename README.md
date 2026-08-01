@@ -41,6 +41,11 @@ To use this Workflows, install the following custom_nodes in your ComfyUI (you p
 - [ComfyUI Layer Style](https://github.com/chflame163/ComfyUI_LayerStyle).
 - [Kiko Prompt Builder](https://github.com/ComfyAssets/kiko-flux2-prompt-builder).
 
+## Optional
+I created two custom_nodes with the help of ChatGPT, using its most advanced mode, and ran several tests to verify they work correctly. If you work with Wildcards and Queue Prompts, I recommend these nodes:
+- [ComfyUI Keyword Wildcard Processor](https://github.com/VictorDmAlves/comfyui-keyword-wildcard-processor).
+- [ComfyUI Persistent Save Image](https://github.com/VictorDmAlves/comfyui-persistent-save-image).
+
 ## Tips and Tricks
 - Change Models: In all my Workflows, you will see that is included a SeedVR2 Workflow for all models. In addition to the features it provides, it can be used to transform an image into another image using a different model thanks to the second KSampler. For instance, you can take an image created in Z-Image-Turbo and place it directly into Flux's SeedVR2. Not only will it transform the image into a Flux image, but it will also allow you to maintain the similarity between the models as much as possible.
 - Swap Characters: For Flux2 Klein, let's say that you want to swap characters between X (real life photo) with Y (art style photo). It's better to replace the background of X to a white color, then change his style to be exactly the same art style of Y to finaly ask Klein to, with this two changes done, swap X with Y, keeping the same pose if you like. Thanks to [arthan1011](https://www.reddit.com/r/comfyui/comments/1qs2h6p/replace_this_character_workflow_with_flux2_klein/) for this find.
@@ -56,12 +61,15 @@ Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 
 My new favorite model, both for its speed and for its quality, fixation and consistency. Really versatile. It's recommended to use the Z-Image Base for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent nevertheless. I'm loving creating LoRAs for this model; hope to share with you all someday in the future.
 
-I am starting to use Wildcards to create custom, dynamic images. To that end, I am also attaching the [Wildcards](./Wildcards/) I use for Z-Image-Turbo (they work with other models as well).
+I started using Wildcards to try to generate dynamic and unique images. For now, I'm using entire prompts, varying between them to maintain a bit more control. To that end, I am also attaching the [Wildcards](./Wildcards/) I use for this model.
 
-I have included further instructions on how to use them within the Workflows. I am still getting used to this system; I will update the other Workflows as soon as possible.
+I am also including an additional Workflow (TXT2IMG only, for now) that integrates two of my custom_nodes; both serve to provide better control over Wildcard prompts and to allow for persistent image viewing. For more details, please refer to the section [Optional](## Optional).
+
+I am still getting used to this system; I will update the other Workflows as soon as possible.
 
 I've created this Workflows so far:
-- TXT2IMG: A simple text to image using a custom_node with styles presets and Wildcard support.
+- TXT2IMG: A simple text to image using a custom_node with styles presets with Wildcard support.
+- TXT2IMG+: The same above, but with my two custom_nodes.
 - IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
 - Inpaint: I developed this Workflow to be as simple as possible. You choose an image, define whether you want to create a mask yourself or let Florence2 do it, then proceed with the inpaint when you ready.
 - SeedVR2 Upscaler: First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
