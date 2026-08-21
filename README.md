@@ -8,7 +8,7 @@
 
 This is simply a repository I decided to create to keep a copy of my ComfyUI Workflows, which I've been using for years. Furthermore, since I've learned so much from the community on Discord and Reddit, I'm happy to share it with everyone.
 
-Feel free to use them and make your own customizations. Note that I am using GGUF models on my computer; change its nodes if you are using native models.
+Feel free to use them and make your own customizations. Note that I am using, in some cases, GGUF models on my computer (RTX3060 12GB and 16GB of RAM); change its nodes if you are using native models.
 
 If you find something that could be improved and you'd like to share it with me, let me know here or through my Reddit by the username VictorDmAlves.
 
@@ -229,7 +229,7 @@ I see a lot of potential for the model, especially when it comes to overall qual
 I recommend checking out their [page](https://huggingface.co/circlestone-labs/Anima) for more information about prompts and tags.
 
 I've created this Workflows so far:
-- TXT2IMG: A simple text to image (I put the Turbo version separately).
+- TXT2IMG: A simple text to image.
 - IMG2IMG: A image to image implementation.
 - SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 - Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
