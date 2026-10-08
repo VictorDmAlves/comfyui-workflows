@@ -245,6 +245,8 @@ For all my LoRA training, I always used captions. Furthermore, one of its uses i
 
 This Workflows are very similar; they have a way to caption one image or a batch of images, saving them in a folder afterwards.
 
+For training porcuses, I would recommend using Florence2 and them modifying it with a tool like mine [Caption Editor](https://github.com/VictorDmAlves/caption-editor/), were you can do the necessary changes while looking a the corresponded image.
+
 I've created this Workflows so far:
 - Florence2: The most fast and consistent model to use. Sometimes it can be a little shallow in details, but it still the best in my opinion.
 - QwenVL: The most complete model for captions, but it can hallucinate a lot and be very inconsistent. One of the best things about it is that you can give instructions on how to caption an image, just like ChatGPT; I left a instruction as example within this Workflow.
