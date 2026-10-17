@@ -80,6 +80,26 @@ I've created this Workflows so far:
 Folder to the Workflows [Z-Image](./Workflows/Z-IMAGE/).
 Folder with example [Images](./Images/Z-IMAGE/).
 
+#### MOSS
+![MOSS Collage](./Images/MOSS.png)
+
+MOSS-Image is a new brand 5B text-to-image generation model, developed by the OpenMOSS team. It stands out especially for its strong capability to render text integrated into images, advanced layout control, and support for long prompts. 
+
+This model can also interpret JSON files containing bboxes (bounding boxes in rectangles shapes), much like Ideogram 4.0, although both, of course, yield results that are quite different from one another.
+
+I’ve been really enjoying this model; it’s quite impressive and versatile for a model with only 5B parameters. I’m still exploring it, but the results have been fantastic.
+
+I recommend using the 8-step LoRA, at least until a "turbo" version of this model becomes available.
+
+I've created this Workflows so far:
+- TXT2IMG: A simple text to image.
+- IMG2IMG: A image to image implementation.
+- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
+
+Folder to the Workflows [MOSS](./Workflows/MOSS/).
+Folder with example [Images](./Images/MOSS/).
+
 #### Wan 2.2
 ![Wan 2.2 Collage](./Images/Wan22.png)
 
