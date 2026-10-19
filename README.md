@@ -46,6 +46,9 @@ I created two custom_nodes with the help of ChatGPT, using its most advanced mod
 - [ComfyUI Keyword Wildcard Processor](https://github.com/VictorDmAlves/comfyui-keyword-wildcard-processor).
 - [ComfyUI Persistent Save Image](https://github.com/VictorDmAlves/comfyui-persistent-save-image).
 
+For my Krea TXT2IMG+ Workflow, is required to have the following custom_node:
+- [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
+
 ## Tips and Tricks
 - Change Models: In all my Workflows, you will see that is included a SeedVR2 Workflow for all models. In addition to the features it provides, it can be used to transform an image into another image using a different model thanks to the second KSampler. For instance, you can take an image created in Z-Image-Turbo and place it directly into Flux's SeedVR2. Not only will it transform the image into a Flux image, but it will also allow you to maintain the similarity between the models as much as possible.
 - Swap Characters: For Flux2 Klein, let's say that you want to swap characters between X (real life photo) with Y (art style photo). It's better to replace the background of X to a white color, then change his style to be exactly the same art style of Y to finaly ask Klein to, with this two changes done, swap X with Y, keeping the same pose if you like. Thanks to [arthan1011](https://www.reddit.com/r/comfyui/comments/1qs2h6p/replace_this_character_workflow_with_flux2_klein/) for this find.
@@ -118,6 +121,7 @@ I've created this Workflows so far:
 - IMG2IMG: A image to image, but with no ControlNet of any kind yet (Wan has VACE; a different beast itself, I'm still messing around with it).
 - TXT & IMG2VID: With the help of the 5B model, that can creat text or image to video, this Workflow allow you to generate a video with good length and quality. I've add the possibility to "stitch" two videos at one, making it seem like it's a continuous video.
 - SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
 
 Folder to the Workflows [Wan](./Workflows/WAN/).
 Folder with example [Images and Video](./Images/WAN/).
@@ -153,7 +157,7 @@ Folder with example [Images](./Images/QWEN/).
 #### Qwen2512
 ![Qwen2512 Collage](./Images/Qwen2512.png)
 
-It's an extremely versatile model with excellent performance and prompt fixation. Using LoRAs Turbo, it's capable of producing very realistic images within few steps. It's one of my most frequently used model, which says a lot.
+It's an extremely versatile model with excellent performance and prompt fixation. Using LoRAs Turbo, it's capable of producing very realistic images within few steps. Unfortunately, the model is very heavy, and I can only run lower-quantization GGUF versions of it, which ends up compromising the final result.
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image.
@@ -176,6 +180,7 @@ I am still learning how to use it more effectively; I haven't implemented anythi
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image using a custom_node with styles presets and more.
+- TXT2IMG+: The same above, but using RES4LYF Sampler.
 - IMG2IMG: A image to image implementation.
 - SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 - Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
@@ -194,8 +199,6 @@ I've created this Workflows so far:
 - TXT2IMG: A simple text to image using a custom_node with styles presets and more.
 - Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base. I've added a Simple Prompt Batcher so you can change an image multiple times, using different types of prompts, without needing to make one by one.
 - Image Edit in Bulk: For instance, if you want to remove watermarks from images and don't want to do it one by one, this Workflow will help make the task easier and more automated.
-- SeedVR2 Upscaler: Just like before, but with a twist. First it runs through a second KSampler following your instructions (for reference I left one in the Workflow). After that, by enabling the group "SeedVR2", you can upscale the image.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
 
 Folder to the Workflows [Flux2](./Workflows/FLUX-2/).
 Folder with example [Images](./Images/FLUX-2/).
