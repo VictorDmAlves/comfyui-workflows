@@ -24,7 +24,7 @@ To use this Workflows, install the following custom_nodes in your ComfyUI (you p
 - [ComfyUI Essentials](https://github.com/cubiq/ComfyUI_essentials).
 - [ComfyUI-Detail-Daemon](https://github.com/Jonseed/ComfyUI-Detail-Daemon).
 - [Florence2 in ComfyUI](https://github.com/kijai/ComfyUI-Florence2).
-- [ComfyUI-GGUF_KREA-2](https://github.com/RealRebelAI/ComfyUI-GGUF_KREA-2).
+- [ComfyUI-GGUF](https://github.com/molbal/ComfyUI-GGUF).
 - [ComfyUI-Impact-Pack](https://github.com/ltdrdata/ComfyUI-Impact-Pack).
 - [ComfyUI-Impact-Subpack](https://github.com/ltdrdata/ComfyUI-Impact-Subpack).
 - [ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack).
