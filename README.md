@@ -14,6 +14,15 @@ If you find something that could be improved and you'd like to share it with me,
 
 If you like to keep track of any changes that I make to the Workflows, be sure to Watch this repository on GitHub.
 
+## Latest release
+### 1.0
+Added
+- Default Workflows
+- README with informations of the Workflows
+- Wildcards to use as examples
+- Dependent and optional custom_nodes to use
+- Tips and tricks to know
+
 ## Dependencies
 I highly recommend using Straight lines in the "Lite Graph" settings, under the "Graph" section. Either this, or keep the lines invisible. My Workflows were built with this in mind.
 
@@ -47,7 +56,7 @@ I created two custom_nodes with the help of ChatGPT, using its most advanced mod
 - [ComfyUI Persistent Save Image](https://github.com/VictorDmAlves/comfyui-persistent-save-image).
 
 For my Krea TXT2IMG+ Workflow, is required to have the following custom_node:
-- [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)
+- [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF).
 
 ## Tips and Tricks
 - Change Models: In all my Workflows, you will see that is included a SeedVR2 Workflow for all models. In addition to the features it provides, it can be used to transform an image into another image using a different model thanks to the second KSampler. For instance, you can take an image created in Z-Image-Turbo and place it directly into Flux's SeedVR2. Not only will it transform the image into a Flux image, but it will also allow you to maintain the similarity between the models as much as possible.
