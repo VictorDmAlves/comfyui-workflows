@@ -15,13 +15,9 @@ If you find something that could be improved and you'd like to share it with me,
 If you like to keep track of any changes that I make to the Workflows, be sure to Watch this repository on GitHub.
 
 ## Latest release
-### 1.0
+### 1.1
 Added
-- Default Workflows
-- README with informations of the Workflows
-- Wildcards to use as examples
-- Dependent and optional custom_nodes to use
-- Tips and tricks to know
+- Revisited versions for the MOSS Image Workflows
 
 ## Dependencies
 I highly recommend using Straight lines in the "Lite Graph" settings, under the "Graph" section. Either this, or keep the lines invisible. My Workflows were built with this in mind.
