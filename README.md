@@ -15,9 +15,18 @@ If you find something that could be improved and you'd like to share it with me,
 If you like to keep track of any changes that I make to the Workflows, be sure to Watch this repository on GitHub.
 
 ## Latest release
-### 1.1
+### 1.2
 Added
-- Revisited versions for the MOSS Image Workflows
+- Add Flux Klein IMG2IMG, SeedVR2 with and without Title
+- Create revisited versions for Flux2 Krea Workflows
+
+Update
+- Updated parameters from MOSS Image Workflows
+- Consolidated revisited versions into main Workflows
+- Remove the necessity of the Kiko Prompt Builder custom_node in the Flux2 Workflows
+
+Remove
+- Revisited versions duplicates
 
 ## Dependencies
 I highly recommend using Straight lines in the "Lite Graph" settings, under the "Graph" section. Either this, or keep the lines invisible. My Workflows were built with this in mind.
@@ -44,7 +53,6 @@ To use this Workflows, install the following custom_nodes in your ComfyUI (you p
 - [ComfyUI WD 1.4 Tagger](https://github.com/pythongosssss/ComfyUI-WD14-Tagger).
 - [ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale).
 - [ComfyUI Layer Style](https://github.com/chflame163/ComfyUI_LayerStyle).
-- [Kiko Prompt Builder](https://github.com/ComfyAssets/kiko-flux2-prompt-builder).
 
 ## Optional
 I created two custom_nodes with the help of ChatGPT, using its most advanced mode, and ran several tests to verify they work correctly. If you work with Wildcards and Queue Prompts, I recommend these nodes:
@@ -148,30 +156,6 @@ I've created this Workflows so far:
 Folder to the Workflows [SD-SDXL](./Workflows/SD-SDXL/).
 Folder with example [Images](./Images/SD-SDXL/).
 
-#### Qwen2511 Image Edit
-![Qwen2511 Collage](./Images/Qwen2511.png)
-
-One of the few local models that can edit an image using contextual language. Compared to the Flux2 Klein, this model takes longer to edit a image and it has a few flaws; for instance, you can't change the style of one image using another (I recommend using LoRA for this). But in terms of consistency in a person's anatomy, this one is more efficient. Overall, a very powerful model.
-
-I've created this Workflows so far:
-- Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base. I've added a Simple Prompt Batcher so you can change an image multiple times, using different types of prompts, without needing to make one by one.
-
-Folder to the Workflows [Qwen](./Workflows/QWEN/).
-Folder with example [Images](./Images/QWEN/).
-
-#### Qwen2512
-![Qwen2512 Collage](./Images/Qwen2512.png)
-
-It's an extremely versatile model with excellent performance and prompt fixation. Using LoRAs Turbo, it's capable of producing very realistic images within few steps. Unfortunately, the model is very heavy, and I can only run lower-quantization GGUF versions of it, which ends up compromising the final result.
-
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image.
-- IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-
-Folder to the Workflows [Qwen](./Workflows/QWEN/).
-Folder with example [Images](./Images/QWEN/).
-
 #### Flux2 Krea
 ![Flux 2 Krea Collage](./Images/Flux2_Krea.png)
 
@@ -202,6 +186,9 @@ In any of this Workflows, you can use either the 4B model or the 9B model; just 
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image using a custom_node with styles presets and more.
+- IMG2IMG: A image to image implementation.
+- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
 - Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base. I've added a Simple Prompt Batcher so you can change an image multiple times, using different types of prompts, without needing to make one by one.
 - Image Edit in Bulk: For instance, if you want to remove watermarks from images and don't want to do it one by one, this Workflow will help make the task easier and more automated.
 
@@ -265,6 +252,30 @@ I've created this Workflows so far:
 
 Folder to the Workflows [Anima](./Workflows/ANIMA/).
 Folder with example [Images](./Images/ANIMA/).
+
+#### Qwen2511 Image Edit
+![Qwen2511 Collage](./Images/Qwen2511.png)
+
+One of the few local models that can edit an image using contextual language. Compared to the Flux2 Klein, this model takes longer to edit a image and it has a few flaws; for instance, you can't change the style of one image using another (I recommend using LoRA for this). But in terms of consistency in a person's anatomy, this one is more efficient. Overall, a very powerful model.
+
+I've created this Workflows so far:
+- Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base. I've added a Simple Prompt Batcher so you can change an image multiple times, using different types of prompts, without needing to make one by one.
+
+Folder to the Workflows [Qwen](./Workflows/QWEN/).
+Folder with example [Images](./Images/QWEN/).
+
+#### Qwen2512
+![Qwen2512 Collage](./Images/Qwen2512.png)
+
+It's an extremely versatile model with excellent performance and prompt fixation. Using LoRAs Turbo, it's capable of producing very realistic images within few steps. Unfortunately, the model is very heavy, and I can only run lower-quantization GGUF versions of it, which ends up compromising the final result.
+
+I've created this Workflows so far:
+- TXT2IMG: A simple text to image.
+- IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
+- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+
+Folder to the Workflows [Qwen](./Workflows/QWEN/).
+Folder with example [Images](./Images/QWEN/).
 
 #### Captions
 ![Captions Collage](./Images/Captions.png)
