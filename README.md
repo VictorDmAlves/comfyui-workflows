@@ -15,18 +15,10 @@ If you find something that could be improved and you'd like to share it with me,
 If you like to keep track of any changes that I make to the Workflows, be sure to Watch this repository on GitHub.
 
 ## Latest release
-### 1.2
-Added
-- Add Flux Klein IMG2IMG, SeedVR2 with and without Title
-- Create revisited versions for Flux2 Krea Workflows
-
+### 1.3
 Update
-- Updated parameters from MOSS Image Workflows
+- Updated parameters from Flux2 Klein Workflows
 - Consolidated revisited versions into main Workflows
-- Remove the necessity of the Kiko Prompt Builder custom_node in the Flux2 Workflows
-
-Remove
-- Revisited versions duplicates
 
 ## Dependencies
 I highly recommend using Straight lines in the "Lite Graph" settings, under the "Graph" section. Either this, or keep the lines invisible. My Workflows were built with this in mind.
