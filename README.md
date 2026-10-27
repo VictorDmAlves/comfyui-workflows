@@ -15,15 +15,19 @@ If you find something that could be improved and you'd like to share it with me,
 If you like to keep track of any changes that I make to the Workflows, be sure to Watch this repository on GitHub.
 
 ## Latest release
-### 1.3
+### 1.4
+Added
+- Add two(2) new, and experimental, Spatial LoRA technique to Z-Image Turbo (more compatible models coming soon)
+- Add four(4) new Workflows to MOSS Image Turbo
+- Parameter improvements for Z-Image and MOSS Workflows
+
 Update
-- Updated parameters from Flux2 Klein Workflows
-- Consolidated revisited versions into main Workflows
+- Consolidated revisited versions of Z-Image Turbo into main Workflows
 
 ## Dependencies
-I highly recommend using Straight lines in the "Lite Graph" settings, under the "Graph" section. Either this, or keep the lines invisible. My Workflows were built with this in mind.
+I highly recommend using Straight lines in the `Lite Graph` settings, under the `Graph` section. Either this, or keep the lines invisible. My Workflows were built with this in mind.
 
-To use this Workflows, install the following custom_nodes in your ComfyUI (you probably already have some of them):
+To use this Workflows, install the following `custom_nodes` in your ComfyUI (you probably already have some of them):
 - [ComfyUI Manager](https://github.com/Comfy-Org/ComfyUI-Manager).
 - [Comfy-KepListStuff](https://github.com/M1kep/Comfy_KepListStuff).
 - [ComfyUI's ControlNet Auxiliary Preprocessors](https://github.com/Fannovel16/comfyui_controlnet_aux).
@@ -47,11 +51,14 @@ To use this Workflows, install the following custom_nodes in your ComfyUI (you p
 - [ComfyUI Layer Style](https://github.com/chflame163/ComfyUI_LayerStyle).
 
 ## Optional
-I created two custom_nodes with the help of ChatGPT, using its most advanced mode, and ran several tests to verify they work correctly. If you work with Wildcards and Queue Prompts, I recommend these nodes:
+I created two `custom_nodes` with the help of ChatGPT Pro and ran several tests to verify they work correctly. If you work with Wildcards and Queue Prompts, I recommend these nodes:
 - [ComfyUI Keyword Wildcard Processor](https://github.com/VictorDmAlves/comfyui-keyword-wildcard-processor).
 - [ComfyUI Persistent Save Image](https://github.com/VictorDmAlves/comfyui-persistent-save-image).
 
-For my Krea TXT2IMG+ Workflow, is required to have the following custom_node:
+Also I created a experimental `custom_node` that helps to apply up to three(3) different LoRAs to specific regions of the image using one single node. You need to have it installed to test its function within the Workflows compatible with the `custom_node`:
+- [ComfyUI Spatial LoRA](https://github.com/VictorDmAlves/comfyui-spatial-lora.git).
+
+For my Krea TXT2IMG+ Workflow, is required to have the following `custom_node`:
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF).
 
 ## Tips and Tricks
@@ -70,16 +77,18 @@ Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 
 My new favorite model, both for its speed and for its quality, fixation and consistency. Really versatile. It's recommended to use the Z-Image Base for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent nevertheless. I'm loving creating LoRAs for this model; hope to share with you all someday in the future.
 
-I started using Wildcards to try to generate dynamic and unique images. For now, I'm using entire prompts, varying between them to maintain a bit more control. To that end, I am also attaching the [Wildcards](./Wildcards/) I use for this model.
+I started using Wildcards to try to generate dynamic and unique images. For now, I'm using entire prompts, varying between them to maintain a bit more control. To that end, I am also attaching some of the [Wildcards](./Wildcards/) I use for this model.
 
-I am also including an additional Workflow (TXT2IMG only, for now) that integrates two of my custom_nodes; both serve to provide better control over Wildcard prompts and to allow for persistent image viewing. For more details, please refer to the section [Optional](#Optional).
+I am also including an additional Workflow (TXT2IMG only, for now) that integrates two of my `custom_nodes`; both serve to provide better control over Wildcard prompts and to allow for persistent image viewing. For more details, please refer to the section [Optional](#Optional).
 
-I am still getting used to this system; I will update the other Workflows as soon as possible.
+On top of that, I also created two new Workflows that uses my new `custom_node`; it helps to apply up to three(3) different LoRAs to specific regions of the image using one single node, with control and integrity. My goal is to integrate this concept with all the models I use.
 
 I've created this Workflows so far:
 - TXT2IMG: A simple text to image using a custom_node with styles presets with Wildcard support.
 - TXT2IMG+: The same above, but with my two custom_nodes.
 - IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
+- Spatial TXT2IMG: A simple text to image using my `custom_node` that helps to apply up to three(3) different LoRAs into the image with control and integrity.
+- Spatial IMG2IMG: A simple image to image using my `custom_node` that helps to apply up to three(3) different LoRAs into the image with control and integrity.
 - Inpaint: I developed this Workflow to be as simple as possible. You choose an image, define whether you want to create a mask yourself or let Florence2 do it, then proceed with the inpaint when you ready.
 - SeedVR2 Upscaler: First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
 - Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
@@ -227,24 +236,6 @@ I've created this Workflows so far:
 Folder to the Workflows [Ideogram](./Workflows/IDEOGRAM-4/).
 Folder with example [Images](./Images/IDEOGRAM-4/).
 
-#### Anima
-![Anima Collage](./Images/Anima.png)
-
-This is an extraordinary model that the folks at CircleStone Labs are developing in collaboration with Comfy Org. It is currently in base version 1.0 and has variations like the "Aesthetic" and "Turbo" versions (the latter of which I recommend using).
-
-I see a lot of potential for the model, especially when it comes to overall quality and fixation for generating anime-style images (in some cases, even for realistic images). I'm studying a way to use ControlNet for image to image; almost there.
-
-I recommend checking out their [page](https://huggingface.co/circlestone-labs/Anima) for more information about prompts and tags.
-
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image.
-- IMG2IMG: A image to image implementation.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
-
-Folder to the Workflows [Anima](./Workflows/ANIMA/).
-Folder with example [Images](./Images/ANIMA/).
-
 #### Qwen2511 Image Edit
 ![Qwen2511 Collage](./Images/Qwen2511.png)
 
@@ -268,6 +259,24 @@ I've created this Workflows so far:
 
 Folder to the Workflows [Qwen](./Workflows/QWEN/).
 Folder with example [Images](./Images/QWEN/).
+
+#### Anima
+![Anima Collage](./Images/Anima.png)
+
+This is an extraordinary model that the folks at CircleStone Labs are developing in collaboration with Comfy Org. It is currently in base version 1.0 and has variations like the "Aesthetic" and "Turbo" versions (the latter of which I recommend using).
+
+I see a lot of potential for the model, especially when it comes to overall quality and fixation for generating anime-style images (in some cases, even for realistic images). I'm studying a way to use ControlNet for image to image; almost there.
+
+I recommend checking out their [page](https://huggingface.co/circlestone-labs/Anima) for more information about prompts and tags.
+
+I've created this Workflows so far:
+- TXT2IMG: A simple text to image.
+- IMG2IMG: A image to image implementation.
+- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
+
+Folder to the Workflows [Anima](./Workflows/ANIMA/).
+Folder with example [Images](./Images/ANIMA/).
 
 #### Captions
 ![Captions Collage](./Images/Captions.png)
