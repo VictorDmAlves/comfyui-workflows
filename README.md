@@ -15,14 +15,15 @@ If you find something that could be improved and you'd like to share it with me,
 If you like to keep track of any changes that I make to the Workflows, be sure to Watch this repository on GitHub.
 
 ## Latest release
-### 1.4
+### 1.5
 Added
-- Add two(2) new, and experimental, Spatial LoRA technique to Z-Image Turbo (more compatible models coming soon)
-- Add four(4) new Workflows to MOSS Image Turbo
-- Parameter improvements for Z-Image and MOSS Workflows
+- Qwen 2.1 Workflows (9 in total), including Image Edit
+
+Removed
+- Removed the Qwen versions of 2511 and 2512 (I didn't like the results; I am developing others.)
 
 Update
-- Consolidated revisited versions of Z-Image Turbo into main Workflows
+- Parameter improvements for Z Image Turbo Spatial IMG2IMG Workflow
 
 ## Dependencies
 I highly recommend using Straight lines in the `Lite Graph` settings, under the `Graph` section. Either this, or keep the lines invisible. My Workflows were built with this in mind.
