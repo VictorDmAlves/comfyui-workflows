@@ -67,21 +67,19 @@ For my Krea TXT2IMG+ Workflow, is required to have the following `custom_node`:
 
 Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 
-## The Workflows
-
-### Z-Image-Turbo
+## Z-Image-Turbo
 ![Z-Image-Turbo Collage](./Images/Z-Image-Turbo.png)
 
 My favorite model! Not only for its speed and image quality, but also for its consistency and prompt adherence. It's incredibly versatile. Although Z-Image Base is recommended for training, I don't plan to create a separate Workflow for it, as the Turbo version is already more than capable for my needs. I've also been loving creating LoRAs for this model, and I hope to share some of them with you all someday!
 
-#### Wildcards & Custom Nodes
+### Wildcards & Custom Nodes
 I've started using Wildcards to generate more dynamic and unique images. For now, I'm using entire prompts rather than individual keywords, switching between them to maintain a bit more control over the results. I'm also sharing some of the [Wildcards](./Wildcards/) I use with this model.
 
 I've included an additional Workflow (TXT2IMG+) that integrates two of my own `custom_nodes`. They provide better control over Wildcard prompts and allow for persistent image viewing. You can find more details in the [Optional](#Optional).
 
 I've also created two Spatial Workflows using another of my `custom_nodes`, which allows you to apply up to three different LoRAs to specific regions of an image, all within a single node. It gives you more control over where each LoRA is applied while helping maintain the integrity of the final image. My goal is to eventually bring this concept to all the models I use.
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
@@ -98,7 +96,7 @@ Here are the Workflows I've created so far:
 Folder to the Workflows [Z-Image](./Workflows/Z-IMAGE/).
 Folder with example [Images](./Images/Z-IMAGE/).
 
-### MOSS
+## MOSS
 ![MOSS Collage](./Images/MOSS.png)
 
 MOSS-Image is a new 5B text-to-image generation model developed by the OpenMOSS team. It stands out for its impressive ability to render text directly into images, advanced layout control, and support for long, detailed prompts.
@@ -109,12 +107,12 @@ I've been really enjoying this model! It's incredibly impressive and versatile, 
 
 For those looking for faster generation, I recommend using the official 8-step LoRA, at least until an official Turbo version becomes available (I’m using one that I found; find the link within the Workflow).
 
-#### Custom Nodes
+### Custom Nodes
 I've also created some of my own `custom_nodes` to improve and optimize MOSS-Image's results. Some of the Workflows below integrate these nodes, offering more complete sampling options and additional features for image generation and editing.
 
 If you're interested, you can find more details in the [Optional](#Optional) section.
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
@@ -136,7 +134,7 @@ Here are the Workflows I've created so far:
 Folder to the Workflows [MOSS](./Workflows/MOSS/).
 Folder with example [Images](./Images/MOSS/).
 
-### Wan 2.2
+## Wan 2.2
 ![Wan 2.2 Collage](./Images/Wan22.png)
 
 <details class="details-reset border rounded-2" align="center">
@@ -151,7 +149,7 @@ Honestly, this model is extremely impressive! I'm genuinely surprised by its fle
 
 I've been enjoying experimenting with its different capabilities, especially how well it handles image generation despite being a video-focused model. There's still plenty for me to explore, particularly with VACE and its more advanced features.
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
@@ -164,7 +162,7 @@ Here are the Workflows I've created so far:
 Folder to the Workflows [Wan](./Workflows/WAN/).
 Folder with example [Images and Video](./Images/WAN/).
 
-### Qwen2.1
+## Qwen2.1
 ![Qwen2.1 Collage](./Images/Qwen21.png)
 
 Qwen-Image 2.1 is a text-to-image generation model developed by the Qwen team, bringing significant improvements in image quality, prompt understanding, text rendering, and high-resolution image generation.
@@ -177,14 +175,14 @@ I've been particularly impressed by its photorealistic results, especially at hi
 
 For the Turbo model, I strongly recommend using its dedicated sigma schedule instead of a conventional scheduler. From my own tests, I've noticed a significant improvement in image quality with this approach.
 
-#### Custom Nodes
+### Custom Nodes
 I've also included additional Workflows that integrate two of my own `custom_nodes`, making the generation and editing process more practical and flexible.
 
 One of them is my Hybrid Sampler, which combines sampling options into a single, more compact node, helping reduce clutter in the Workflow. The other is my Load Multi Image node, which makes loading and managing multiple reference images much easier, especially when working with Image Edit.
 
 You can find more details about these nodes in the [Optional](#Optional) section.
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
@@ -201,7 +199,7 @@ Here are the Workflows I've created so far:
 Folder to the Workflows [Qwen](./Workflows/QWEN/).
 Folder with example [Images](./Images/QWEN/).
 
-### Flux2 Krea
+## Flux2 Krea
 ![Flux 2 Krea Collage](./Images/Flux2_Krea.png)
 
 Although I've categorized it under Flux2 in my Workflows, this is actually a model trained from scratch, using Qwen3-VL as its text encoder and Qwen Image VAE for decoding.
@@ -212,12 +210,12 @@ One of its most interesting features is the ability to interpret JSON-based layo
 
 I'm still learning how to get the most out of this model, and there are quite a few things I haven't explored yet, such as ControlNet integration. But one step at a time!
 
-#### GGUF Support
+### GGUF Support
 If you're planning to use this model in GGUF format, you'll need a specific `custom_node`: a fork of the original `city96/ComfyUI-GGUF project`.
 
 This fork extends the original implementation with additional compatibility, since the original project hasn't received updates in a while. I've already switched to this version in my Workflows, so make sure you have it installed if you're using GGUF models.
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
@@ -230,7 +228,7 @@ Here are the Workflows I've created so far:
 Folder to the Workflows [Flux2](./Workflows/FLUX-2/).
 Folder with example [Images](./Images/FLUX-2/).
 
-### Flux2 Klein
+## Flux2 Klein
 ![Flux 2 Klein Collage](./Images/Flux2_Klein.png)
 
 This is probably the model that has impressed me the most so far! It's incredibly easy to use, delivers spectacular image quality, and offers excellent generation speed.
@@ -239,10 +237,10 @@ One of its most impressive features is the ability to perform context-aware imag
 
 Unfortunately, my current hardware doesn't allow me to run the full FLUX.2 models, so I'm sticking with Klein for now. Hopefully, I'll be able to upgrade my machine someday and create Workflows for the larger models as well. Although, considering the current hardware market, that might take a while!
 
-#### Model Compatibility
+### Model Compatibility
 All the Workflows below are compatible with both the 4B and 9B versions of FLUX.2 Klein. Just make sure to use the corresponding CLIP/text encoder when switching between them.
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
@@ -256,7 +254,7 @@ Here are the Workflows I've created so far:
 Folder to the Workflows [Flux2](./Workflows/FLUX-2/).
 Folder with example [Images](./Images/FLUX-2/).
 
-### Flux1
+## Flux1
 ![Flux Collage](./Images/Flux.png)
 
 FLUX used to be my favorite model for photorealism and LoRA training, although I still find myself coming back to it from time to time!
@@ -265,10 +263,10 @@ Besides its impressive realism, it's an incredibly versatile model, capable of e
 
 I've also been using FLUX Fill, especially for outpainting, and it's been a great addition to my Workflows.
 
-#### Text Encoders
+### Text Encoders
 FLUX uses two text encoders: CLIP-L and T5. From my experience, I've found that using short, descriptive tags in CLIP-L and longer, more detailed prompts in T5 works particularly well.
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
@@ -284,7 +282,7 @@ Here are the Workflows I've created so far:
 Folder to the Workflows [Flux](./Workflows/FLUX/).
 Folder with example [Images](./Images/FLUX/).
 
-### Ideogram 4.0
+## Ideogram 4.0
 ![Ideogram4 Collage](./Images/Ideogram4.png)
 
 Ideogram 4.0 is another model with a promising future! Although it's quite slow and a bit more complicated when it comes to prompting, its image quality is excellent, and it offers some really impressive capabilities.
@@ -295,14 +293,14 @@ Since Ideogram 4.0 relies on structured JSON prompts, I recommend using my QwenV
 
 I'm still exploring the model and figuring out the best ways to work with it, but despite its slower generation speed, the results have been quite impressive!
 
-#### Prompt builder & model configuration
+### Prompt builder & model configuration
 I've separated the Prompt Builder into its own Workflow using KJNodes, making it more flexible and reusable. If you're working with other models that use Qwen-based text encoders, such as FLUX.2 Klein, you can also adapt this Workflow to generate structured JSON prompts for them.
 
 As for the model configuration, I've chosen to use only the standard Ideogram model, without combining it with the unconditional version, since I've been getting better results this way.
 
 I'm also not using GGUF for the diffusion model itself, only for the text encoder (CLIP), as GGUF support for the main model isn't available in my current ComfyUI setup.
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
@@ -314,7 +312,7 @@ Here are the Workflows I've created so far:
 Folder to the Workflows [Ideogram](./Workflows/IDEOGRAM-4/).
 Folder with example [Images](./Images/IDEOGRAM-4/).
 
-### SD-SDXL
+## SD-SDXL
 ![SD-SDXL Collage](./Images/SD-SDXL.png)
 
 Still one of my favorite models for generating both illustrative and semi-photorealistic content! Despite having been around for quite some time, it remains incredibly versatile and capable of producing impressive results.
@@ -323,14 +321,14 @@ One of its biggest strengths is its massive ecosystem of Checkpoints, LoRAs, and
 
 And honestly, that's what makes this model so special. Even with newer and more advanced alternatives becoming available, it continues to be incredibly useful, especially when you want more control over the final result.
 
-#### LoRAs & Checkpoints
+### LoRAs & Checkpoints
 With such a huge variety of Checkpoints available, you can achieve completely different results without having to change your entire Workflow. I personally enjoy experimenting with different combinations of Checkpoints and LoRAs to see what works best for a particular style or subject.
 
 I've also included a dedicated Two LoRA Hooks Workflow, which makes it easier to combine two different LoRAs within the same image while helping reduce unwanted interference between them. This is particularly useful when working with multiple characters or combining different artistic styles.
 
 Just keep in mind that LoRA compatibility and strength settings can make a big difference, especially when mixing different Checkpoints and styles!
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
@@ -345,7 +343,7 @@ Here are the Workflows I've created so far:
 Folder to the Workflows [SD-SDXL](./Workflows/SD-SDXL/).
 Folder with example [Images](./Images/SD-SDXL/).
 
-### Anima
+## Anima
 ![Anima Collage](./Images/Anima.png)
 
 Anima is an extraordinary model being developed by the folks at CircleStone Labs, in collaboration with Comfy Org. Currently in its 1.0 release, it already offers different variants, including Base, Aesthetic, and Turbo (the latter being my personal recommendation!).
@@ -354,14 +352,14 @@ I see a lot of potential in this model, especially when it comes to overall imag
 
 I'm still exploring its capabilities and experimenting with different approaches to get the most out of it. One thing I'm particularly interested in is integrating ControlNet into my Image-to-Image Workflow. I haven't quite figured it out yet, but I'm getting close!
 
-#### Model variants & prompting
+### Model variants & prompting
 For now, I recommend using the Turbo version, as it offers a great balance between generation speed and image quality.
 
 Anima also has its own prompting characteristics, so getting familiar with its recommended tags and prompt structure can make a noticeable difference in the results.
 
 I strongly recommend checking out the official [Anima page on Hugging Face](https://huggingface.co/circlestone-labs/Anima) for more information about the available variants, prompting techniques, and supported tags.
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
@@ -373,7 +371,7 @@ Here are the Workflows I've created so far:
 Folder to the Workflows [Anima](./Workflows/ANIMA/).
 Folder with example [Images](./Images/ANIMA/).
 
-### Captions
+## Captions
 ![Captions Collage](./Images/Captions.png)
 
 I've always used captions when training my LoRAs, and over time, I've experimented with several models to find the best balance between accuracy, consistency, and detail.
@@ -382,14 +380,14 @@ Captions are especially useful for preparing training datasets, but they can als
 
 The Workflows I've created are quite similar in structure. They allow you to caption a single image or process multiple images in batches, automatically saving the results to a folder. The main difference between them is the model used for captioning and how each one interprets the image.
 
-#### LoRA training & caption editing
+### LoRA training & caption editing
 For LoRA training, I personally recommend using Florence2 as a starting point. It's fast, consistent, and generally produces reliable captions, even if it sometimes misses smaller details.
 
 After generating your captions, I strongly recommend reviewing and refining them manually, especially when preparing a dataset for a specific character, object, or style. Even the best captioning models can overlook important details or include information you don't necessarily want the LoRA to learn.
 
 To make this process easier, I've also developed my own [Caption Editor](https://github.com/VictorDmAlves/caption-editor/), which allows you to review and modify captions while viewing their corresponding images. It's particularly useful when working with larger datasets, where editing individual text files can become quite tedious!
 
-#### Available Workflows
+### Available Workflows
 Here are the Workflows I've created so far:
 | Workflow | Description |
 |---|---|
