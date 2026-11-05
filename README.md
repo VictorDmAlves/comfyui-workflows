@@ -15,18 +15,18 @@ If you find something that could be improved and you'd like to share it with me,
 If you like to keep track of any changes that I make to the Workflows, be sure to Watch this repository on GitHub.
 
 ## Latest release
-### 1.5
+### 1.6
 Added
-- Qwen 2.1 Workflows (9 in total), including Image Edit
-
-Removed
-- Removed the Qwen versions of 2511 and 2512 (I didn't like the results; I am developing others.)
+- Workflows for MOSS Image Edit.
 
 Update
-- Parameter improvements for Z Image Turbo Spatial IMG2IMG Workflow
+- I wasn't satisfied with the way the images were being saved, so I changed those parameters across all Workflows.
+- Overhaul update of README.
 
 ## Dependencies
 I highly recommend using Straight lines in the `Lite Graph` settings, under the `Graph` section. Either this, or keep the lines invisible. My Workflows were built with this in mind.
+
+I don’t like using Subgraph, and even less so Nodes 2.0; you won’t be seeing them around here!
 
 To use this Workflows, install the following `custom_nodes` in your ComfyUI (you probably already have some of them):
 - [ComfyUI Manager](https://github.com/Comfy-Org/ComfyUI-Manager).
@@ -52,16 +52,8 @@ To use this Workflows, install the following `custom_nodes` in your ComfyUI (you
 - [ComfyUI Layer Style](https://github.com/chflame163/ComfyUI_LayerStyle).
 
 ## Optional
-I created two `custom_nodes` with the help of ChatGPT Pro and ran several tests to verify they work correctly. If you work with Wildcards and Queue Prompts, I recommend these nodes:
-- [ComfyUI Keyword Wildcard Processor](https://github.com/VictorDmAlves/comfyui-keyword-wildcard-processor).
-- [ComfyUI Persistent Save Image](https://github.com/VictorDmAlves/comfyui-persistent-save-image).
-
-Also I created a experimental `custom_node` that helps to apply up to three(3) different LoRAs to specific regions of the image using one single node. You need to have it installed to test its function within the Workflows compatible with the `custom_node`:
-- [ComfyUI Spatial LoRA](https://github.com/VictorDmAlves/comfyui-spatial-lora.git).
-
-Two `custom nodes` created for Qwen2.1 Image Workflows (including Image Edit); they serve to streamline and optimize both the image loading process and the sampler used during generation. You need to have it installed to test its function within the Workflows compatible with this `custom_node`:
-- [ComfyUI Load Multi Image](https://github.com/VictorDmAlves/comfyui-load-multi-image).
-- [ComfyUI Hybrid Sampler](https://github.com/VictorDmAlves/comfyui-hybrid-sampler).
+I’ve put together a pack containing all the `custom_nodes` I use for my Workflows with a `+` on their names. If you're interested, use this pack in conjunction with my Workflows. I also provide individual versions of this nodes, in case you aren't interested in all of them:
+- [ComfyUI VicNodes](https://github.com/VictorDmAlves/comfyui-vicnodes).
 
 For my Krea TXT2IMG+ Workflow, is required to have the following `custom_node`:
 - [RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF).
@@ -71,62 +63,80 @@ For my Krea TXT2IMG+ Workflow, is required to have the following `custom_node`:
 - Swap Characters: For Flux2 Klein, let's say that you want to swap characters between X (real life photo) with Y (art style photo). It's better to replace the background of X to a white color, then change his style to be exactly the same art style of Y to finaly ask Klein to, with this two changes done, swap X with Y, keeping the same pose if you like. Thanks to [arthan1011](https://www.reddit.com/r/comfyui/comments/1qs2h6p/replace_this_character_workflow_with_flux2_klein/) for this find.
 - Upscale technique for Flux and Flux2: For both of this models, has a technique to upscale a image using tiles together with SeedVR2. Because it divides the image into tiles, performing individual upscaling, when everything is combined into a single image, the result is truly impressive. Thanks to [Wei Mao](https://www.youtube.com/watch?v=QHn6Qg59e8Y) for this find.
 - Two LoRA in one image: Recently I discovered Illustrious model and fell in love with the SDXL again (I believe Anima helped me with that). That said, I was curious to know if there was a way to place two LoRAs of different characters in a single image, using only one KSampler, without creating artifacts or duplicates. Here's the Workflow with Hooks, a technique that consists of rendering each LoRA in a piece of the image using masks, combining them afterwards. Thanks to [Nikhil Setiya](https://www.youtube.com/watch?v=zhJJcegZ0MQ) for this find.
-- I've created, with ChatGPT Pro, a simple and lightweight [browser-based tool](https://github.com/VictorDmAlves/caption-editor/) designed to make image captioning faster and more convenient. I've been using for LoRA training, I hope it's useful for you too.
+- I've created a simple and lightweight [browser-based tool](https://github.com/VictorDmAlves/caption-editor/) designed to make image captioning faster and more convenient. I've been using for LoRA training, I hope it's useful for you too.
 
 Folder with examples of this [Tips and Tricks](./Images/EXAMPLES/).
 
 ## The Workflows
 
-#### Z-Image-Turbo
+### Z-Image-Turbo
 ![Z-Image-Turbo Collage](./Images/Z-Image-Turbo.png)
 
-My new favorite model, both for its speed and for its quality, fixation and consistency. Really versatile. It's recommended to use the Z-Image Base for training, so I'm not going to build a Workflow for it; just using the Turbo one is enough and very competent nevertheless. I'm loving creating LoRAs for this model; hope to share with you all someday in the future.
+My favorite model! Not only for its speed and image quality, but also for its consistency and prompt adherence. It's incredibly versatile. Although Z-Image Base is recommended for training, I don't plan to create a separate Workflow for it, as the Turbo version is already more than capable for my needs. I've also been loving creating LoRAs for this model, and I hope to share some of them with you all someday!
 
-I started using Wildcards to try to generate dynamic and unique images. For now, I'm using entire prompts, varying between them to maintain a bit more control. To that end, I am also attaching some of the [Wildcards](./Wildcards/) I use for this model.
+#### Wildcards & Custom Nodes
+I've started using Wildcards to generate more dynamic and unique images. For now, I'm using entire prompts rather than individual keywords, switching between them to maintain a bit more control over the results. I'm also sharing some of the [Wildcards](./Wildcards/) I use with this model.
 
-I am also including an additional Workflow (TXT2IMG only, for now) that integrates two of my `custom_nodes`; both serve to provide better control over Wildcard prompts and to allow for persistent image viewing. For more details, please refer to the section [Optional](#Optional).
+I've included an additional Workflow (TXT2IMG+) that integrates two of my own `custom_nodes`. They provide better control over Wildcard prompts and allow for persistent image viewing. You can find more details in the [Optional](#Optional).
 
-On top of that, I also created two new Workflows that uses my new `custom_node`; it helps to apply up to three(3) different LoRAs to specific regions of the image using one single node, with control and integrity. My goal is to integrate this concept with all the models I use.
+I've also created two Spatial Workflows using another of my `custom_nodes`, which allows you to apply up to three different LoRAs to specific regions of an image, all within a single node. It gives you more control over where each LoRA is applied while helping maintain the integrity of the final image. My goal is to eventually bring this concept to all the models I use.
 
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image using a custom_node with styles presets with Wildcard support.
-- TXT2IMG+: The same above, but with my two custom_nodes.
-- IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
-- Spatial TXT2IMG: A simple text to image using my `custom_node` that helps to apply up to three(3) different LoRAs into the image with control and integrity.
-- Spatial IMG2IMG: A simple image to image using my `custom_node` that helps to apply up to three(3) different LoRAs into the image with control and integrity.
-- Inpaint: I developed this Workflow to be as simple as possible. You choose an image, define whether you want to create a mask yourself or let Florence2 do it, then proceed with the inpaint when you ready.
-- SeedVR2 Upscaler: First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
-- XY Plot: I created this Workflow to compare and show, for example, the differences between a range of strength values of a LoRA. You can adapt this Workflow to make any other comparisons.
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| TXT2IMG | A simple Text-to-Image Workflow using a `custom_node` with style presets and Wildcard support. |
+| TXT2IMG+ | An extended version of TXT2IMG, integrating two of my `custom_nodes` for better Wildcard control and persistent image viewing. |
+| IMG2IMG | An Image-to-Image Workflow with ControlNet integration, useful when you want to generate an image that closely resembles the original. |
+| Spatial TXT2IMG | A Text-to-Image Workflow using my Spatial LoRA `custom_node` to apply up to three different LoRAs to specific regions of an image. |
+| Spatial IMG2IMG | Similar to Spatial TXT2IMG, but designed for Image-to-Image generation, allowing you to work with an existing image while controlling where each LoRA is applied. |
+| Inpaint | Designed to be as simple as possible. Just load an image, choose whether to create the mask manually or let Florence2 handle it, and start inpainting! |
+| SeedVR2 Upscaler | Runs the image through a second KSampler to add more details. After that, you can enable the SeedVR2 group for further upscaling. |
+| Tile & SeedVR2 Upscaler | An impressive way to enhance images by dividing them into tiles, upscaling each one individually, and then combining them into a single, higher-quality image. |
+| XY Plot | Created to compare different settings, such as a range of LoRA strength values. You can easily adapt it to test and visualize other parameters as well. |
 
 Folder to the Workflows [Z-Image](./Workflows/Z-IMAGE/).
 Folder with example [Images](./Images/Z-IMAGE/).
 
-#### MOSS
+### MOSS
 ![MOSS Collage](./Images/MOSS.png)
 
-MOSS-Image is a new brand 5B text-to-image generation model, developed by the OpenMOSS team. It stands out especially for its strong capability to render text integrated into images, advanced layout control, and support for long prompts. 
+MOSS-Image is a new 5B text-to-image generation model developed by the OpenMOSS team. It stands out for its impressive ability to render text directly into images, advanced layout control, and support for long, detailed prompts.
 
-This model can also interpret JSON files containing bboxes (bounding boxes in rectangles shapes), much like Ideogram 4.0, although both, of course, yield results that are quite different from one another.
+One of its most interesting features is the ability to interpret JSON-based layouts containing bounding boxes (BBoxes), allowing for more precise control over image composition. It's somewhat similar to what Ideogram 4.0 offers, although both models produce quite different results.
 
-I’ve been really enjoying this model; it’s quite impressive and versatile for a model with only 5B parameters. I’m still exploring it, but the results have been fantastic.
+I've been really enjoying this model! It's incredibly impressive and versatile, especially considering it has only 5B parameters. I'm still exploring its capabilities, but so far, the results have been fantastic.
 
-I recommend using the 8-step LoRA, at least until a official "turbo" version of this model becomes available.
+For those looking for faster generation, I recommend using the official 8-step LoRA, at least until an official Turbo version becomes available (I’m using one that I found; find the link within the Workflow).
 
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image using the SFT version.
-- Turbo TXT2IMG: The same above, but using the unofficial turbo version.
-- IMG2IMG: A image to image implementation using the SFT version.
-- Turbo IMG2IMG: The same above, but using the unofficial turbo version.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image; using the SFT version.
-- Turbo SeedVR2 Upscaler: The same above, but using the unofficial turbo version.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique; using the SFT version.
-- Turbo Tile and SeedVR2 Upscaler: The same above, but using the unofficial turbo version.
+#### Custom Nodes
+I've also created some of my own `custom_nodes` to improve and optimize MOSS-Image's results. Some of the Workflows below integrate these nodes, offering more complete sampling options and additional features for image generation and editing.
+
+If you're interested, you can find more details in the [Optional](#Optional) section.
+
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| TXT2IMG | A simple Text-to-Image Workflow using the SFT version of MOSS-Image. |
+| TXT2IMG+ | An extended version of TXT2IMG, integrating my `custom_nodes` for more complete sampling options and better control over generation. |
+| Turbo TXT2IMG | Similar to TXT2IMG, but using the unofficial 8-step LoRA for faster image generation. |
+| Turbo TXT2IMG+ | The same as Turbo TXT2IMG, but integrating my `custom_nodes` for more complete sampling options. |
+| IMG2IMG | An Image-to-Image Workflow using the SFT version, allowing you to generate new images based on an existing one. |
+| IMG2IMG+ | An extended version of IMG2IMG, using my `custom_nodes` for more complete sampling options and better control. |
+| Turbo IMG2IMG | The same as IMG2IMG, but using the unofficial 8-step LoRA for faster generation. |
+| Turbo IMG2IMG+ | The same as Turbo IMG2IMG, but integrating my `custom_nodes` for more complete sampling options. |
+| SeedVR2 Upscaler | Uses a second KSampler to enhance details before optionally upscaling the image through the SeedVR2 group. Uses the SFT version. |
+| Turbo SeedVR2 Upscaler | The same upscaling process, but using the unofficial 8-step LoRA. |
+| Tile & SeedVR2 Upscaler | An impressive way to enhance images by dividing them into tiles, upscaling each one individually, and then combining them into a single, higher-quality image. Uses the SFT version. |
+| Turbo Tile & SeedVR2 Upscaler | The same tile-based upscaling process, but using the unofficial 8-step LoRA. |
+| Edit | Uses a dedicated LoRA to enable context-aware image editing, allowing you to modify an existing image or use a second image as a reference for more specific adjustments. |
+| Edit+ | An extended version of Edit, integrating two of my `custom_nodes`: one for more complete sampling options and another for loading and managing multiple reference images within a single node. |
 
 Folder to the Workflows [MOSS](./Workflows/MOSS/).
 Folder with example [Images](./Images/MOSS/).
 
-#### Wan 2.2
+### Wan 2.2
 ![Wan 2.2 Collage](./Images/Wan22.png)
 
 <details class="details-reset border rounded-2" align="center">
@@ -137,176 +147,255 @@ Folder with example [Images](./Images/MOSS/).
   </div>
 </details>
 
-Honestly, this model is extremely impressive. I'm surprised by its flexibility and realism, considering it's primarily a video model. That, and the vast collection of LoRAs available for it, makes it a very competent model for both image and video.
+Honestly, this model is extremely impressive! I'm genuinely surprised by its flexibility and realism, especially considering it's primarily designed for video generation. Combined with the huge collection of LoRAs available for it, WAN has proven to be a very capable and versatile model for both image and video generation.
 
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image using WanVideoNAG for better control.
-- IMG2IMG: A image to image, but with no ControlNet of any kind yet (Wan has VACE; a different beast itself, I'm still messing around with it).
-- TXT & IMG2VID: With the help of the 5B model, that can creat text or image to video, this Workflow allow you to generate a video with good length and quality. I've add the possibility to "stitch" two videos at one, making it seem like it's a continuous video.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
+I've been enjoying experimenting with its different capabilities, especially how well it handles image generation despite being a video-focused model. There's still plenty for me to explore, particularly with VACE and its more advanced features.
+
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| TXT2IMG | A simple Text-to-Image Workflow using WanVideoNAG for better control over image generation. |
+| IMG2IMG | An Image-to-Image Workflow without ControlNet integration for now. WAN has its own approach through VACE, which is a different beast entirely, and I'm still experimenting with it! |
+| TXT & IMG2VID | Uses the 5B model for both Text-to-Video and Image-to-Video generation, producing videos with good quality and duration. I've also included an option to stitch two videos together, making them appear as a single, continuous sequence. |
+| SeedVR2 Upscaler | Uses a second KSampler to enhance details before optionally upscaling the image through the SeedVR2 group. |
+| Tile & SeedVR2 Upscaler | An impressive way to enhance images by dividing them into tiles, upscaling each one individually, and then combining them into a single, higher-quality image. |
 
 Folder to the Workflows [Wan](./Workflows/WAN/).
 Folder with example [Images and Video](./Images/WAN/).
 
-#### Qwen2.1
+### Qwen2.1
 ![Qwen2.1 Collage](./Images/Qwen21.png)
 
 Qwen-Image 2.1 is a text-to-image generation model developed by the Qwen team, bringing significant improvements in image quality, prompt understanding, text rendering, and high-resolution image generation.
 
-Beyond text-to-image generation, Qwen-Image 2.1 also offers powerful image editing capabilities, allowing users to modify existing images through natural language instructions.
+Beyond text-to-image generation, it also offers powerful image editing capabilities, allowing you to modify existing images through natural language instructions. With support for multiple reference images, you can change clothing, objects, environments, artistic styles, and other visual elements while maintaining better control over the original composition and subject identity.
 
-It supports multiple reference images, making it possible to change clothing, objects, environments, artistic styles, and other visual elements while attempting to preserve the original composition and subject identity.
+One of its most interesting features is the ability to generate images at native 2K resolution, producing impressive levels of detail without necessarily requiring additional upscaling or a second sampling pass.
 
-One of its most interesting features is its ability to generate images at native 2K resolution, producing impressive levels of detail without necessarily requiring additional upscaling or a second sampling pass.
+I've been particularly impressed by its photorealistic results, especially at higher resolutions. The Turbo version is also surprisingly capable, delivering excellent image quality in just 8 steps!
 
-I've been particularly impressed by its photorealistic results, especially when working with higher resolutions. The Turbo version is also surprisingly capable, delivering excellent results in just 8 steps.
+For the Turbo model, I strongly recommend using its dedicated sigma schedule instead of a conventional scheduler. From my own tests, I've noticed a significant improvement in image quality with this approach.
 
-For the Turbo model, I strongly recommend using its dedicated sigma schedule rather than a conventional scheduler, as I've noticed a noticeable improvement in image quality.
+#### Custom Nodes
+I've also included additional Workflows that integrate two of my own `custom_nodes`, making the generation and editing process more practical and flexible.
 
-I am also including additional Workflows (TXT2IMG and Image Edit) that integrates two of my `custom_nodes`; one serves to condense and optimize space when using a Sampler, while the other makes the "Load Image" function more dynamic and flexible. For more details, please refer to the section [Optional](#Optional).
+One of them is my Hybrid Sampler, which combines sampling options into a single, more compact node, helping reduce clutter in the Workflow. The other is my Load Multi Image node, which makes loading and managing multiple reference images much easier, especially when working with Image Edit.
 
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image using the base version.
-- TXT2IMG+: The same above, but using my custom_node Hybrid Sampler.
-- Turbo TXT2IMG: A simple text to image using the turbo version.
-- Turbo TXT2IMG+: The same above, but using my custom_node Hybrid Sampler.
-- IMG2IMG: A image to image implementation using the base version.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
-- Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base and more.
-- Image Edit+: The same above, but using my custom_node Load Multi Image.
+You can find more details about these nodes in the [Optional](#Optional) section.
+
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| TXT2IMG | A simple Text-to-Image Workflow using the base version of Qwen-Image 2.1. |
+| TXT2IMG+ | An extended version of TXT2IMG, integrating my Hybrid Sampler `custom_node` for a more compact and organized sampling setup. |
+| Turbo TXT2IMG | Similar to TXT2IMG, but using the Turbo version for faster image generation in just 8 steps. |
+| Turbo TXT2IMG+ | The same as Turbo TXT2IMG, but integrating my Hybrid Sampler `custom_node` for a more compact sampling setup. |
+| IMG2IMG | An Image-to-Image Workflow using the base version, allowing you to generate new images based on an existing one. |
+| SeedVR2 Upscaler | Uses a second KSampler to enhance details before optionally upscaling the image through the SeedVR2 group. |
+| Tile & SeedVR2 Upscaler | An impressive way to enhance images by dividing them into tiles, upscaling each one individually, and then combining them into a single, higher-quality image. |
+| Edit | Takes image editing a step further than traditional IMG2IMG, allowing for context-aware modifications, including using additional reference images to guide specific changes. |
+| Edit+ | An extended version of Image Edit, integrating my Load Multi Image `custom_node` for easier loading and management of multiple reference images within a single node. |
 
 Folder to the Workflows [Qwen](./Workflows/QWEN/).
 Folder with example [Images](./Images/QWEN/).
 
-#### Flux2 Krea
+### Flux2 Krea
 ![Flux 2 Krea Collage](./Images/Flux2_Krea.png)
 
-Although I categorize it as Flux2 in my Workflows, it is a model trained from scratch that uses Qwen3-VL as the text encoder and the Qwen Image VAE for decoding. I am using the "Turbo" version and am quite impressed with its quality and speed.
+Although I've categorized it under Flux2 in my Workflows, this is actually a model trained from scratch, using Qwen3-VL as its text encoder and Qwen Image VAE for decoding.
 
-This model can also interpret JSON files containing bboxes (bounding boxes in rectangles shapes), much like Ideogram 4.0, although both, of course, yield results that are quite different from one another.
+I'm currently using the Turbo version, and I've been really impressed with its quality and speed! It's a surprisingly capable model, delivering great results without requiring too much time for generation.
 
-To use this model with GGUF, you need a specific custom_node, a fork of "city96/ComfyUI-GGUF" which supplements the original node, given that the author hasn't updated that project in months. I replaced it with this new one in my Workflows!
+One of its most interesting features is the ability to interpret JSON-based layouts containing bounding boxes (BBoxes), allowing for more precise control over image composition. It's somewhat similar to what Ideogram 4.0 offers, although both models produce quite different results.
 
-I am still learning how to use it more effectively; I haven't implemented anything with ControlNet yet, for example. But one step at a time!
+I'm still learning how to get the most out of this model, and there are quite a few things I haven't explored yet, such as ControlNet integration. But one step at a time!
 
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image using a custom_node with styles presets and more.
-- TXT2IMG+: The same above, but using RES4LYF Sampler.
-- IMG2IMG: A image to image implementation.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
+#### GGUF Support
+If you're planning to use this model in GGUF format, you'll need a specific `custom_node`: a fork of the original `city96/ComfyUI-GGUF project`.
+
+This fork extends the original implementation with additional compatibility, since the original project hasn't received updates in a while. I've already switched to this version in my Workflows, so make sure you have it installed if you're using GGUF models.
+
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| TXT2IMG | A simple Text-to-Image Workflow using the Krea2 Turbo. |
+| TXT2IMG+ | An extended version of TXT2IMG, integrating the RES4LYF Sampler for additional sampling options and more control over image generation. |
+| IMG2IMG | An Image-to-Image Workflow that allows you to generate new images based on an existing one. |
+| SeedVR2 Upscaler | Uses a second KSampler to enhance details before optionally upscaling the image through the SeedVR2 group. |
+| Tile & SeedVR2 Upscaler | An impressive way to enhance images by dividing them into tiles, upscaling each one individually, and then combining them into a single, higher-quality image. |
 
 Folder to the Workflows [Flux2](./Workflows/FLUX-2/).
 Folder with example [Images](./Images/FLUX-2/).
 
-#### Flux2 Klein
+### Flux2 Klein
 ![Flux 2 Klein Collage](./Images/Flux2_Klein.png)
 
-This is the model that has impressed me the most so far. Extremely easy to use, it has spectacular quality and excellent speed. This model can make context-sensitive adjustments, very similar to Gemini and ChatGPT, which represents a major advance in the generation of images locally. Unfortunately, on my current machine, I can't use Flux2, only Klein. Maybe one day I'll upgrade and create Workflows for it; but in the current market situation, it will take a while.
+This is probably the model that has impressed me the most so far! It's incredibly easy to use, delivers spectacular image quality, and offers excellent generation speed.
 
-In any of this Workflows, you can use either the 4B model or the 9B model; just don't forget to change the CLIP for them as well.
+One of its most impressive features is the ability to perform context-aware image editing, allowing you to make changes through natural language instructions, much like Gemini and ChatGPT. I believe this represents a major step forward for local image generation, especially considering how accessible and versatile this model is.
 
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image using a custom_node with styles presets and more.
-- IMG2IMG: A image to image implementation.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
-- Image Edit: This model is more refined than a image to image model. It allows for context-sensitive adjustments, including making adjustments to one image using a second image as a base. I've added a Simple Prompt Batcher so you can change an image multiple times, using different types of prompts, without needing to make one by one.
-- Image Edit in Bulk: For instance, if you want to remove watermarks from images and don't want to do it one by one, this Workflow will help make the task easier and more automated.
+Unfortunately, my current hardware doesn't allow me to run the full FLUX.2 models, so I'm sticking with Klein for now. Hopefully, I'll be able to upgrade my machine someday and create Workflows for the larger models as well. Although, considering the current hardware market, that might take a while!
+
+#### Model Compatibility
+All the Workflows below are compatible with both the 4B and 9B versions of FLUX.2 Klein. Just make sure to use the corresponding CLIP/text encoder when switching between them.
+
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| TXT2IMG | A simple Text-to-Image Workflow using a `custom_node` which allows for generating different images using prompts for each line in a single node. |
+| IMG2IMG | An Image-to-Image Workflow that allows you to generate new images based on an existing one. |
+| SeedVR2 Upscaler | Uses a second KSampler to enhance details before optionally upscaling the image through the SeedVR2 group. |
+| Tile & SeedVR2 Upscaler | An impressive way to enhance images by dividing them into tiles, upscaling each one individually, and then combining them into a single, higher-quality image. |
+| Edit | Takes image editing a step further than traditional IMG2IMG, allowing for context-aware modifications using natural language instructions and additional reference images. I've also included a Simple Prompt Batcher, so you can apply multiple changes using different prompts without having to process them one by one. |
+| Edit in Bulk | Designed to make repetitive image editing tasks much easier. For example, if you need to remove watermarks or unwanted elements from multiple images, this Workflow helps automate the process instead of editing each image individually. |
 
 Folder to the Workflows [Flux2](./Workflows/FLUX-2/).
 Folder with example [Images](./Images/FLUX-2/).
 
-#### Flux1
+### Flux1
 ![Flux Collage](./Images/Flux.png)
 
-Used to be my preferred model when it comes to realism and LoRA training, although I haven't stopped using it here and there. Besides being realistic, it can make changes to images, enlarge a photo, and contextually fill it with more information. A complete model, albeit a large one. I'm using Flux Fill as well, specially for outpainting.
+FLUX used to be my favorite model for photorealism and LoRA training, although I still find myself coming back to it from time to time!
 
-Flux uses two CLIP, and its best application is to use short tags in "Clip-l" and detailed text in "T5".
+Besides its impressive realism, it's an incredibly versatile model, capable of editing existing images, expanding photos, and contextually filling in new areas with impressive consistency. It's a pretty complete model, even if it's on the heavier side.
 
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image with the possibility to use Detail Daemon, which increase the details of the image.
-- IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
-- Face Detailer: A Workflow that allows you to enhance a face in an image without altering other information. Useful for images of people at a distance, which often loses quality during image generation.
-- Inpaint and Outpaint: I developed this Workflow to be as simple as possible. You choose an image, define whether you want to create a mask yourself or let Florence2 do it, then select whether you want to do inpaint or outpaint of the respective mask.
-- Ultimate SD Upscaler: For those who prefer the inference, dividing by blocks, and quality control of this upscaler. I would say that, for some cases, this one is still the best; though your mileage may vary.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
-- XY Plot: I created this Workflow to compare and show, for example, the differences between a range of strength values of a LoRA. You can adapt this Workflow to make any other comparisons.
+I've also been using FLUX Fill, especially for outpainting, and it's been a great addition to my Workflows.
+
+#### Text Encoders
+FLUX uses two text encoders: CLIP-L and T5. From my experience, I've found that using short, descriptive tags in CLIP-L and longer, more detailed prompts in T5 works particularly well.
+
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| TXT2IMG | A simple Text-to-Image Workflow with optional Detail Daemon integration to enhance image details during generation. |
+| IMG2IMG | An Image-to-Image Workflow with ControlNet integration, useful when you want to generate an image that closely resembles the original. |
+| Face Detailer | Designed to enhance facial details without modifying the rest of the image. Particularly useful for people photographed from a distance, where faces often lose quality during generation. |
+| Inpaint & Outpaint | Designed to be as simple as possible. Just load an image, choose whether to create a mask manually or let Florence2 handle it, and select between inpainting and outpainting. Uses FLUX Fill for the editing process. |
+| Ultimate SD Upscaler | A more traditional tile-based upscaling approach, offering additional control over the generation and refinement process. In some situations, I still find it to be the best option, although your mileage may vary! |
+| SeedVR2 Upscaler | Uses a second KSampler to enhance details before optionally upscaling the image through the SeedVR2 group. |
+| Tile & SeedVR2 Upscaler | An impressive way to enhance images by dividing them into tiles, upscaling each one individually, and then combining them into a single, higher-quality image.
+| XY Plot | Created to compare different settings, such as a range of LoRA strength values. You can easily adapt it to test and visualize other parameters as well. |
 
 Folder to the Workflows [Flux](./Workflows/FLUX/).
 Folder with example [Images](./Images/FLUX/).
 
-#### Ideogram 4.0
+### Ideogram 4.0
 ![Ideogram4 Collage](./Images/Ideogram4.png)
 
-Another model with a bright future, although it's quite slow and a bit complicated for generating prompts; at that note, use my QwenVL Workflow with the guided text mentioned in the [Ideogram4](./Ideogram4/) file to generate a prompt with LLM in JSON format, since this model required one.
+Ideogram 4.0 is another model with a promising future! Although it's quite slow and a bit more complicated when it comes to prompting, its image quality is excellent, and it offers some really impressive capabilities.
 
-The great advantage of this model is that it's possible to use bboxes (bounding boxes in rectangles shapes) to specify where each object is located in the scene, which is quite impressive; the model quality is excellent.
+One of its biggest advantages is the ability to interpret JSON-based layouts containing bounding boxes (BBoxes), allowing you to specify exactly where different objects should appear within a scene. This gives you much greater control over image composition, which is one of the things I find most interesting about this model.
 
-I separated the Prompt Builder part using Kjnodes because – if you have other models that use Qwen as CLIP – you can use this Workflow to generate the JSON format for them as well (like Flux2 Klein).
+Since Ideogram 4.0 relies on structured JSON prompts, I recommend using my QwenVL Workflow along with the guided instructions provided in the [Ideogram4](./Ideogram4/) file. This makes it much easier to generate properly formatted prompts using an LLM.
 
-You'll notice that I didn't use the two Ideogram models (normal and unconditional) since I obtained better results without the latter; I'm also not using GGUF, only for the CLIP, mainly because it's not yet supported in ComfyUI.
+I'm still exploring the model and figuring out the best ways to work with it, but despite its slower generation speed, the results have been quite impressive!
 
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image.
-- IMG2IMG: A image to image implementation.
-- Prompt Builder: A simple way to load an image or a prompt, converting it to text in JSON format; it's also possible to create all the bboxes within this Workflow.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
+#### Prompt builder & model configuration
+I've separated the Prompt Builder into its own Workflow using KJNodes, making it more flexible and reusable. If you're working with other models that use Qwen-based text encoders, such as FLUX.2 Klein, you can also adapt this Workflow to generate structured JSON prompts for them.
+
+As for the model configuration, I've chosen to use only the standard Ideogram model, without combining it with the unconditional version, since I've been getting better results this way.
+
+I'm also not using GGUF for the diffusion model itself, only for the text encoder (CLIP), as GGUF support for the main model isn't available in my current ComfyUI setup.
+
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| TXT2IMG | A simple Text-to-Image Workflow using Ideogram 4.0, with support for structured JSON prompts and BBox-based image composition. |
+| IMG2IMG | An Image-to-Image Workflow that allows you to generate new images based on an existing one. |
+| Prompt Builder | A dedicated Workflow for generating structured JSON prompts from an image or text description. You can also create and configure BBoxes directly within it, making it easier to control the composition of your images. |
+| SeedVR2 Upscaler | Uses a second KSampler to enhance details before optionally upscaling the image through the SeedVR2 group. |
 
 Folder to the Workflows [Ideogram](./Workflows/IDEOGRAM-4/).
 Folder with example [Images](./Images/IDEOGRAM-4/).
 
-#### SD-SDXL
+### SD-SDXL
 ![SD-SDXL Collage](./Images/SD-SDXL.png)
 
-One of the best models for producing illustrative and even realistic content. With its huge range of LoRAs and Checkpoints, and because it has been around for a while, it remains an indispensable model to this day.
+Still one of my favorite models for generating both illustrative and semi-photorealistic content! Despite having been around for quite some time, it remains incredibly versatile and capable of producing impressive results.
 
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image.
-- IMG2IMG: A image to image with ControlNet implementation, if you want to make a very similar image.
-- Inpaint & Outpaint: I developed this Workflow to be as simple as possible. You choose an image, define whether you want to create a mask yourself or let Florence2 do it, then select whether you want to do inpaint or outpaint of the respective mask.
-- Two LoRA Hooks: This Workflow helps generate an image using two distinct LoRAs together, without creating artifacts or duplicates. You can combine two characters, two image styles, or two pose styles.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
-- XY Plot: I created this Workflow to compare and show, for example, the differences between a range of strength values of a LoRA. You can adapt this Workflow to make any other comparisons.
+One of its biggest strengths is its massive ecosystem of Checkpoints, LoRAs, and other community resources. Whether you're looking for realistic photography, anime, digital illustrations, or something entirely different, there's probably a model or LoRA out there that fits exactly what you need.
+
+And honestly, that's what makes this model so special. Even with newer and more advanced alternatives becoming available, it continues to be incredibly useful, especially when you want more control over the final result.
+
+#### LoRAs & Checkpoints
+With such a huge variety of Checkpoints available, you can achieve completely different results without having to change your entire Workflow. I personally enjoy experimenting with different combinations of Checkpoints and LoRAs to see what works best for a particular style or subject.
+
+I've also included a dedicated Two LoRA Hooks Workflow, which makes it easier to combine two different LoRAs within the same image while helping reduce unwanted interference between them. This is particularly useful when working with multiple characters or combining different artistic styles.
+
+Just keep in mind that LoRA compatibility and strength settings can make a big difference, especially when mixing different Checkpoints and styles!
+
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| TXT2IMG | A simple Text-to-Image Workflow, allowing you to experiment with different Checkpoints, LoRAs, and styles. |
+| IMG2IMG | An Image-to-Image Workflow with ControlNet integration, useful when you want to generate an image that closely resembles the original. |
+| Inpaint & Outpaint | Designed to be as simple as possible. Just load an image, choose whether to create a mask manually or let Florence2 handle it, and select between inpainting and outpainting. |
+| Two LoRA Hooks | Designed to combine two different LoRAs within a single image while minimizing unwanted artifacts, duplicated elements, and interference. Useful for combining two characters, artistic styles, or pose styles with greater control. |
+| SeedVR2 Upscaler | Uses a second KSampler to enhance details before optionally upscaling the image through the SeedVR2 group. |
+| Tile & SeedVR2 Upscaler | An impressive way to enhance images by dividing them into tiles, upscaling each one individually, and then combining them into a single, higher-quality image. |
+| XY Plot | Created to compare different settings, such as a range of LoRA strength values. You can easily adapt it to test and visualize other parameters as well. |
 
 Folder to the Workflows [SD-SDXL](./Workflows/SD-SDXL/).
 Folder with example [Images](./Images/SD-SDXL/).
 
-#### Anima
+### Anima
 ![Anima Collage](./Images/Anima.png)
 
-This is an extraordinary model that the folks at CircleStone Labs are developing in collaboration with Comfy Org. It is currently in base version 1.0 and has variations like the "Aesthetic" and "Turbo" versions (the latter of which I recommend using).
+Anima is an extraordinary model being developed by the folks at CircleStone Labs, in collaboration with Comfy Org. Currently in its 1.0 release, it already offers different variants, including Base, Aesthetic, and Turbo (the latter being my personal recommendation!).
 
-I see a lot of potential for the model, especially when it comes to overall quality and fixation for generating anime-style images (in some cases, even for realistic images). I'm studying a way to use ControlNet for image to image; almost there.
+I see a lot of potential in this model, especially when it comes to overall image quality, prompt adherence, and consistency in generating anime-style images. Although anime is clearly its main focus, I've also seen some surprisingly good results with more realistic styles.
 
-I recommend checking out their [page](https://huggingface.co/circlestone-labs/Anima) for more information about prompts and tags.
+I'm still exploring its capabilities and experimenting with different approaches to get the most out of it. One thing I'm particularly interested in is integrating ControlNet into my Image-to-Image Workflow. I haven't quite figured it out yet, but I'm getting close!
 
-I've created this Workflows so far:
-- TXT2IMG: A simple text to image.
-- IMG2IMG: A image to image implementation.
-- SeedVR2 Upscaler: Same as the others. First it runs through a second KSampler to add more details. After that, by enabling the group "SeedVR2", you can upscale the image.
-- Tile and SeedVR2 Upscaler: An impressive way to improve an image by dividing it into tiles, upscaling each tile individually, thus unifying them and creating a single image with superior quality compared to any other type of upscaling technique.
+#### Model variants & prompting
+For now, I recommend using the Turbo version, as it offers a great balance between generation speed and image quality.
+
+Anima also has its own prompting characteristics, so getting familiar with its recommended tags and prompt structure can make a noticeable difference in the results.
+
+I strongly recommend checking out the official [Anima page on Hugging Face](https://huggingface.co/circlestone-labs/Anima) for more information about the available variants, prompting techniques, and supported tags.
+
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| TXT2IMG | A simple Text-to-Image Workflow designed for generating anime-style illustrations and experimenting with different prompts and styles. |
+| IMG2IMG | An Image-to-Image Workflow that allows you to generate new images based on an existing one. ControlNet integration is something I'm still working on! |
+| SeedVR2 Upscaler | Uses a second KSampler to enhance details before optionally upscaling the image through the SeedVR2 group. |
+| Tile & SeedVR2 Upscaler | An impressive way to enhance images by dividing them into tiles, upscaling each one individually, and then combining them into a single, higher-quality image. |
 
 Folder to the Workflows [Anima](./Workflows/ANIMA/).
 Folder with example [Images](./Images/ANIMA/).
 
-#### Captions
+### Captions
 ![Captions Collage](./Images/Captions.png)
 
-For all my LoRA training, I always used captions. Furthermore, one of its uses is to analyze any image and generate a prompt to be used in image generation.
+I've always used captions when training my LoRAs, and over time, I've experimented with several models to find the best balance between accuracy, consistency, and detail.
 
-This Workflows are very similar; they have a way to caption one image or a batch of images, saving them in a folder afterwards.
+Captions are especially useful for preparing training datasets, but they can also serve another purpose: analyzing an existing image and generating a descriptive prompt that can be used for image generation.
 
-For model training, I would recommend using Florence2 and them modifying it with a tool like mine [Caption Editor](https://github.com/VictorDmAlves/caption-editor/), were you can do the necessary changes while looking a the corresponded image.
+The Workflows I've created are quite similar in structure. They allow you to caption a single image or process multiple images in batches, automatically saving the results to a folder. The main difference between them is the model used for captioning and how each one interprets the image.
 
-I've created this Workflows so far:
-- Florence2: The most fast and consistent model to use. Sometimes it can be a little shallow in details, but it still the best in my opinion.
-- QwenVL: The most complete model for captions, but it can hallucinate a lot and be very inconsistent. One of the best things about it is that you can give instructions on how to caption an image, just like ChatGPT; I left a instruction as example within this Workflow.
-- WD 1.4 Tagger: The go-to model if you want to produce captions with danbooru-style tags.
+#### LoRA training & caption editing
+For LoRA training, I personally recommend using Florence2 as a starting point. It's fast, consistent, and generally produces reliable captions, even if it sometimes misses smaller details.
+
+After generating your captions, I strongly recommend reviewing and refining them manually, especially when preparing a dataset for a specific character, object, or style. Even the best captioning models can overlook important details or include information you don't necessarily want the LoRA to learn.
+
+To make this process easier, I've also developed my own [Caption Editor](https://github.com/VictorDmAlves/caption-editor/), which allows you to review and modify captions while viewing their corresponding images. It's particularly useful when working with larger datasets, where editing individual text files can become quite tedious!
+
+#### Available Workflows
+Here are the Workflows I've created so far:
+| Workflow | Description |
+|---|---|
+| Florence2 | My personal favorite for captioning! It's fast, consistent, and generally reliable, although it can sometimes produce descriptions that are a little too simple or lacking in detail. Still, it's my preferred choice for preparing LoRA training datasets. |
+| QwenVL | One of the most capable models for generating detailed captions, with support for custom instructions, much like ChatGPT. However, it can also hallucinate details and produce inconsistent results. I've included an example instruction in the Workflow to help you get started. |
+| WD 1.4 Tagger | A great option for generating Danbooru-style tags, especially useful for anime illustrations and datasets that benefit from tag-based descriptions rather than natural language captions. |
 
 Folder to the Workflows [Captions](./Workflows/CAPTIONS/).
 Folder with example [Images and Captions](./Images/CAPTIONS/).
